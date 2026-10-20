@@ -1,7 +1,7 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>KAYANI POS</title>
-<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
-<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#2A1E16">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="KAYANI">
 <meta name="claude:viewport-fit-sides" content="cover">
-<link rel="stylesheet" href="fonts/fonts.css">
+<link rel="stylesheet" href="fonts.css">
 <style>
 /* Mise en page : barre latérale espresso + plan de travail sable clair ; palette tirée du compte Instagram KAYANI (sable, caramel, bronze, espresso, mousse) */
 :root{
@@ -255,7 +255,7 @@ tbody tr.click:hover{background:var(--sand)}
 <div id="app"></div>
 
 <script src="config.js"></script>
-<script src="vendor/supabase.js"></script>
+<script src="supabase.js"></script>
 <script src="sync.js"></script>
 <script>
 /* ============================================================
@@ -1311,7 +1311,7 @@ async function doLogin(){const email=val('lg-email'),pass=document.getElementByI
  if(!navigator.onLine){ui.login.err='Pas de connexion Internet : la première connexion sur cet appareil en demande une.';render();return}
  ui.login.busy=true;ui.login.err='';render();
  try{const p=await Store.signIn(email,pass);ui.login.busy=false;await enter(p)}
- catch(e){ui.login.busy=false;ui.login.err=/Invalid login/i.test(e.message)?'E-mail ou mot de passe incorrect.':e.message;render()}}
+ catch(e){ui.login.busy=false;ui.login.err=/Invalid login/i.test(e.message)?'E-mail ou mot de passe incorrect.':/fetch|network|Load failed/i.test(e.message)?'Impossible de joindre le serveur KAYANI. Vérifiez la connexion Internet puis réessayez.':/Email not confirmed/i.test(e.message)?'Adresse e-mail non confirmée : cochez « Auto Confirm User » dans Supabase ou confirmez le compte.':e.message;render()}}
 async function boot(){
  if(!Store.PROD){render();return}
  document.getElementById('app').innerHTML='<div class="splash"><img src="'+LOGO+'" alt="KAYANI" style="width:96px;border-radius:50%"></div>';

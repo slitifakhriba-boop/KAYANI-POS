@@ -4,6 +4,6 @@
    NE JAMAIS mettre ici la clé « service_role ».
    Laissez vide pour lancer l'application en mode démonstration (données fictives). */
 window.KAYANI_CONFIG = {
-  supabaseUrl: '',
-  supabaseAnonKey: ''
+  supabaseUrl: 'https://xgarbvcmzopxpafpekhk.supabase.co',
+  supabaseAnonKey: 'sb_publishable_4FBnjlHCNCYzgiXCBlro6A_B44l6r6h'
 };

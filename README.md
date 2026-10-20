@@ -80,13 +80,17 @@ Ensuite, se connecter une première fois avec Internet. L'application s'ouvre en
 
 ## Structure
 
+Tous les fichiers de l'application sont à la racine (aucun dossier nécessaire) :
+
 ```
 index.html            application (interface, calculs, écrans)
 sync.js               stockage local + synchronisation Supabase
 sw.js                 service worker (fonctionnement hors ligne)
 manifest.webmanifest  installation (nom, icônes, couleurs)
-config.js             URL Supabase + clé anon
-vendor/               client Supabase (embarqué pour le hors ligne)
-fonts/, icons/        polices et icônes embarquées
-supabase/schema.sql   tables, droits (RLS), numérotation légale
+config.js             URL Supabase + clé publique
+supabase.js           client Supabase (embarqué pour le hors ligne)
+fonts.css             polices Figtree et Marcellus (intégrées)
+*.png                 icônes de l'application
+supabase/schema.sql   (facultatif sur le site) tables, droits RLS, numérotation légale
+scripts/              (facultatif sur le site) outils de construction
 ```

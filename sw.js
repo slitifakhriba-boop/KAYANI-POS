@@ -1,11 +1,8 @@
 /* KAYANI POS — service worker : garde l'application en cache pour un usage hors ligne.
    Les données ne passent pas par ici (IndexedDB + Supabase). Changer VERSION à chaque mise en ligne. */
-const VERSION='kayani-2.2.0';
-const SHELL=['./','index.html','sync.js','config.js','manifest.webmanifest','vendor/supabase.js','vendor/591.supabase.js','fonts/fonts.css',
- 'fonts/figtree-latin-400-normal.woff2','fonts/figtree-latin-500-normal.woff2','fonts/figtree-latin-600-normal.woff2','fonts/figtree-latin-700-normal.woff2',
- 'fonts/figtree-latin-ext-400-normal.woff2','fonts/figtree-latin-ext-500-normal.woff2','fonts/figtree-latin-ext-600-normal.woff2','fonts/figtree-latin-ext-700-normal.woff2',
- 'fonts/marcellus-latin-400-normal.woff2','fonts/marcellus-latin-ext-400-normal.woff2',
- 'icons/icon-192.png','icons/icon-512.png','icons/icon-maskable-512.png','icons/apple-touch-icon.png','icons/favicon-32.png'];
+const VERSION='kayani-2.2.2';
+const SHELL=['./','index.html','sync.js','config.js','manifest.webmanifest','supabase.js','fonts.css',
+ 'icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png','favicon-32.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(VERSION).then(c=>c.addAll(SHELL)))});
 self.addEventListener('activate',e=>{e.waitUntil(caches.keys().then(ks=>Promise.all(ks.filter(k=>k!==VERSION).map(k=>caches.delete(k)))).then(()=>self.clients.claim()))});
 self.addEventListener('message',e=>{if(e.data==='skipWaiting')self.skipWaiting()});
