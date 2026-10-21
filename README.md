@@ -3,7 +3,7 @@
 Caisse, clients, agenda et gestion du centre de bien-être **KAYANI**.
 Application web installable (PWA) : elle s'installe sur PC, iPhone et iPad, fonctionne **hors ligne** et se **synchronise** avec Supabase dès que la connexion revient.
 
-Version 2.4, 22/10/2026.
+Version 2.5, 22/10/2026.
 
 ---
 
@@ -60,6 +60,45 @@ La clé *anon* est publique par conception. La sécurité repose sur la connexio
 Dépôt › **Settings › Pages** › *Source* : **Deploy from a branch** › branche `main`, dossier `/ (root)` › **Save**.
 L'application est en ligne quelques minutes plus tard à l'adresse `https://<utilisateur>.github.io/kayani-pos/`.
 
+### 5. Google Agenda (synchronisation dans les deux sens)
+
+L'agenda de KAYANI se synchronise avec l'agenda Google **kayani.therapy@gmail.com** :
+- un rendez-vous créé, déplacé ou annulé dans KAYANI apparaît dans Google en quelques secondes ;
+- un événement créé dans Google avec un titre « **Prestation — Prénom Nom** » (ex. « Kobido — Amira Ben Salah ») devient un rendez-vous KAYANI. Les autres apparaissent « à relier » dans l'agenda ;
+- un déplacement ou une suppression faits dans Google sont repris dans KAYANI.
+
+KAYANI reste la référence pour les capacités, les intervenants, les salles et les paiements. Si un horaire est modifié des deux côtés, la modification la plus récente l'emporte. Un déplacement fait dans Google qui crée un conflit est refusé : le rendez-vous garde son horaire KAYANI, l'événement Google est remis à cet horaire et le conflit est signalé dans l'agenda.
+
+**A. Google Cloud** (avec n'importe quel compte Google, par exemple kayani.therapy@gmail.com)
+1. Ouvrir https://console.cloud.google.com › créer un projet « KAYANI POS ».
+2. *API et services › Bibliothèque* › rechercher **Google Calendar API** › **Activer**.
+3. *API et services › Identifiants* › **Créer des identifiants › Compte de service**. Nom : `kayani-sync` › *Créer et continuer* › ne pas attribuer de rôle › *OK*.
+4. Ouvrir ce compte de service › onglet **Clés** › *Ajouter une clé › Créer une clé* › **JSON**. Un fichier se télécharge : il donne accès à l'agenda, **ne le partagez pas et ne le mettez jamais dans ce dépôt**.
+5. Noter l'adresse du compte de service (elle se termine par `.iam.gserviceaccount.com`).
+
+**B. Google Agenda** (connecté avec kayani.therapy@gmail.com)
+1. https://calendar.google.com › roue dentée › **Paramètres** › dans *Paramètres de mes agendas*, cliquer sur l'agenda kayani.therapy.
+2. *Partager avec des personnes ou des groupes spécifiques* › **Ajouter des personnes** › coller l'adresse du compte de service › autorisation **Apporter des modifications aux événements** › *Envoyer*.
+
+**C. Supabase**
+1. *SQL Editor › New query* › coller [`supabase/gcal.sql`](supabase/gcal.sql) › **Run**.
+2. *Edge Functions › Deploy a new function › Via Editor* › nom exactement **`gcal-sync`** › remplacer tout le code par celui de [`supabase/functions/gcal-sync/index.ts`](supabase/functions/gcal-sync/index.ts) › **Deploy**.
+3. Ouvrir la fonction `gcal-sync` › *Details* › désactiver **Verify JWT** (« Enforce JWT verification ») › *Save*. La fonction vérifie elle-même chaque appel.
+4. *Edge Functions › Secrets* › ajouter :
+   - `GOOGLE_SERVICE_ACCOUNT` : tout le contenu du fichier JSON téléchargé à l'étape A4 ;
+   - `GCAL_CALENDAR_ID` : `kayani.therapy@gmail.com`.
+5. Dans KAYANI : *Paramètres › Google Agenda › Synchroniser maintenant*. L'état passe à **Connecté**.
+
+Si l'état affiche « Clé de service Supabase absente », ajouter aussi le secret `KAYANI_SERVICE_KEY` avec la clé secrète du projet (*Project Settings › API Keys*).
+
+Pour arrêter la synchronisation : voir la fin de `supabase/gcal.sql`.
+
+Tests du moteur de synchronisation (faux Google Agenda, aucune donnée réelle) :
+```
+node supabase/functions/gcal-sync/test/sync.test.mjs
+node supabase/functions/gcal-sync/test/handler.test.mjs
+```
+
 ---
 
 ## Installer l'application sur les appareils
@@ -92,5 +131,7 @@ supabase.js           client Supabase (embarqué pour le hors ligne)
 fonts.css             polices Figtree et Marcellus (intégrées)
 *.png                 icônes de l'application
 supabase/schema.sql   (facultatif sur le site) tables, droits RLS, numérotation légale
+supabase/gcal.sql     (facultatif sur le site) synchronisation Google Agenda : état privé, déclencheur, tâche planifiée
+supabase/functions/gcal-sync/  fonction de synchronisation Google Agenda et ses tests
 scripts/              (facultatif sur le site) outils de construction
 ```
