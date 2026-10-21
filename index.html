@@ -312,7 +312,7 @@ const ic=(n,cls='')=>`<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke
 /* ---------- Données de démonstration ---------- */
 const USERS={admin:{id:'u-admin',name:'Direction KAYANI',short:'DK',role:'admin',email:'direction@kayani.tn'},assistant:{id:'u-assist',name:'Assistante accueil',short:'AS',role:'assistant',email:'accueil@kayani.tn'}};
 const LOGO='data:image/jpeg;base64,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';
-const APP_VERSION='2.3';const APP_VERSION_DATE='20/10/2026';
+const APP_VERSION='2.4';const APP_VERSION_DATE='22/10/2026';
 const STAFF=[{id:'st1',name:'Praticienne',spec:'Soins du corps'},{id:'st2',name:'Thérapeute',spec:'Thérapie et counseling'},{id:'st3',name:'Animateurs',spec:'Clubs : chant, danse, yoga'}];
 const ROOMS=['Cabine 1','Cabine 2','Salle calme','Studio'];
 const SERVICE_CATS=['Soins du corps','Thérapie','Clubs','Autres prestations'];
@@ -497,6 +497,23 @@ function range(p){
  if(p==='30j') return {from:addDays(t,-29),to:t,pf:addDays(t,-59),pt:addDays(t,-30),label:'30 derniers jours',plabel:'30 jours précédents'};
  const pf=addDays(first,-1).slice(0,8)+'01'; return {from:first,to:t,pf,pt:addDays(pf,day-1),label:'Ce mois-ci',plabel:'même période du mois dernier'};
 }
+/* Période du tableau de bord : jour, semaine (lundi-dimanche), mois ou année contenant la date choisie.
+   La période en cours s'arrête à aujourd'hui ; la période précédente a la même durée. */
+const MOIS=['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+const JOURS=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+const lastOfMonth=iso=>{const d=new Date(Date.UTC(+iso.slice(0,4),+iso.slice(5,7),0));return d.toISOString().slice(0,10)};
+const daysDiff=(a,b)=>Math.round((new Date(b+'T12:00:00Z')-new Date(a+'T12:00:00Z'))/864e5);
+const minD=(a,b)=>a<b?a:b;
+function shiftMonth(iso,n){const y=+iso.slice(0,4),m=+iso.slice(5,7)-1+n;const first=new Date(Date.UTC(y,m,1)).toISOString().slice(0,10);return first.slice(0,8)+String(Math.min(+iso.slice(8,10),+lastOfMonth(first).slice(8,10))).padStart(2,'0')}
+function periodAt(p,ref){
+ if(p==='jour'){const pf=addDays(ref,-1);return {from:ref,to:ref,pf,pt:pf,label:(ref===TODAY?'Aujourd\'hui, ':'')+JOURS[dow(ref)]+' '+fmtD(ref),plabel:'la veille'}}
+ if(p==='semaine'){const mon=addDays(ref,-((dow(ref)+6)%7)),sun=addDays(mon,6),to=minD(sun,TODAY<mon?sun:TODAY);const pf=addDays(mon,-7);return {from:mon,to,pf,pt:addDays(pf,daysDiff(mon,to)),label:'Semaine du '+fmtD(mon)+' au '+fmtD(sun),plabel:'la semaine précédente'}}
+ if(p==='annee'){const y=ref.slice(0,4),from=y+'-01-01',end=y+'-12-31',to=minD(end,TODAY<from?end:TODAY);const pf=(+y-1)+'-01-01';return {from,to,pf,pt:minD(addDays(pf,daysDiff(from,to)),(+y-1)+'-12-31'),label:'Année '+y,plabel:'même période de '+(+y-1)}}
+ const from=ref.slice(0,8)+'01',end=lastOfMonth(from),to=minD(end,TODAY<from?end:TODAY);const pf=shiftMonth(from,-1);
+ return {from,to,pf,pt:minD(addDays(pf,daysDiff(from,to)),lastOfMonth(pf)),label:MOIS[+from.slice(5,7)-1]+' '+from.slice(0,4),plabel:'même période du mois précédent'};
+}
+function shiftRef(p,ref,n){if(p==='jour')return addDays(ref,n);if(p==='semaine')return addDays(ref,7*n);if(p==='annee')return shiftMonth(ref,12*n);return shiftMonth(ref,n)}
+const expIn=r=>S.expenses.filter(e=>inRange(e.date,r)&&e.status!=='rejetée');
 function linesIn(r,{cat='toutes',user='tous'}={}){
  const out=[]; liveSales().forEach(s=>{ if(!inRange(s.date,r)) return; if(user!=='tous'&&s.user!==user) return; s.lines.forEach(l=>{ if(cat!=='toutes'&&l.cat!==cat) return; out.push({...l,sale:s}) }) }); return out;
 }
@@ -512,7 +529,7 @@ const STAT={ 'payée':'p-good','émise':'p-sage','partiellement payée':'p-warn'
 const pill=s=>`<span class="pill ${STAT[s]||'p-neutral'}">${esc(s.charAt(0).toUpperCase()+s.slice(1))}</span>`;
 
 /* ---------- État d'interface ---------- */
-const ui={user:null,view:'dashboard',period:'mois',fcat:'toutes',fuser:'tous',
+const ui={user:null,view:'dashboard',period:'mois',ref:TODAY,fcat:'toutes',fuser:'tous',
  pos:{q:'',cat:'Tout',cart:[],clientId:'',pays:[],method:'Espèces',amount:'',key:null,busy:false,mode:'complet',due:''},
  cat:{tab:'services',q:'',page:1},cli:{q:'',seg:'tous',page:1},docs:{tab:'factures',q:''},exp:{q:'',month:'tous',axe:'tous'},adv:{tab:'avances',st:'ouvertes',q:''},sales:{month:TODAY.slice(0,7),q:'',method:'tous',page:1},
  agenda:{date:TODAY},rep:{type:'ventes',period:'mois'},modal:null,toast:null,nav:false,login:{role:'admin'}};
@@ -601,7 +618,9 @@ function shell(content){
 
 /* --- Tableau de bord --- */
 function viewDashboard(){
- const r=range(ui.period); const prev={from:r.pf,to:r.pt};
+ if(ui.ref>TODAY)ui.ref=TODAY;
+ const r=periodAt(ui.period,ui.ref); const prev={from:r.pf,to:r.pt};
+ const D=ui.period==='jour'?ui.ref:TODAY, Dlab=D===TODAY?'aujourd\'hui':'le '+fmtD(D);
  const f={cat:ui.fcat,user:ui.fuser};
  const cur=linesIn(r,f), pre=linesIn(prev,f);
  const ca=sumLines(cur), caPrev=sumLines(pre);
@@ -612,14 +631,14 @@ function viewDashboard(){
  const advOpen=S.advances.filter(a=>advBal(a)>0);const advTot=advOpen.reduce((x,a)=>x+advBal(a),0);
  const open=liveSales().map(s=>({s,due:s.total-paidFor(s.id)})).filter(x=>x.due>0);
  const creances=open.reduce((a,x)=>a+x.due,0);
- const depenses=S.expenses.filter(e=>inRange(e.date,r)&&e.status!=='rejetée').reduce((a,e)=>a+e.amount,0);
+ const depenses=expIn(r).reduce((a,e)=>a+e.amount,0), depPrev=expIn(prev).reduce((a,e)=>a+e.amount,0);
  const invoiced=S.invoices.filter(i=>i.status!=='annulée'&&inRange(i.date,r)).reduce((a,i)=>a+S.sales.find(s=>s.id===i.saleId).total,0);
  const pendingQ=S.quotes.filter(q=>q.status==='envoyé');
- const todayB=S.bookings.filter(b=>b.date===TODAY&&b.serviceId);
+ const todayB=S.bookings.filter(b=>b.date===D&&b.serviceId);
  const activeB=todayB.filter(b=>b.status!=='annulé');
- const occMin=S.bookings.filter(b=>b.date===TODAY&&b.status!=='annulé'&&b.status!=='externe'&&b.serviceId).reduce((a,b)=>a+b.dur,0);
+ const occMin=S.bookings.filter(b=>b.date===D&&b.status!=='annulé'&&b.status!=='externe'&&b.serviceId).reduce((a,b)=>a+b.dur,0);
  const occ=pct(occMin,STAFF.length*11*60);
- const todaySales=liveSales().filter(s=>s.date===TODAY);
+ const todaySales=liveSales().filter(s=>s.date===D);
  const seen=new Set([...todaySales.map(s=>s.clientId).filter(Boolean),...todayB.filter(b=>b.status==='honoré'&&b.clientId).map(b=>b.clientId)]);
  const kpi=(tag,label,v,s,cls='')=>`<div class="kpi ${cls}"><div class="eyebrow">${label}</div><div class="v num">${v}</div><div class="s">${s}</div>${tag?`<div class="tag muted">${tag}</div>`:''}</div>`;
  const deltaTxt=delta===null?'Pas de donnée sur la période précédente':`<span class="delta ${delta>=0?'up':'down'}">${delta>=0?'▲':'▼'} ${Math.abs(delta).toLocaleString('fr-FR')} %</span> vs ${r.plabel}`;
@@ -629,22 +648,59 @@ function viewDashboard(){
   ${kpi('TTC · argent reçu','Encaissements',fmtM(enc),'Paiements et avances reçus, nets des remboursements')}
   ${kpi('TTC · à date','Créances clients',fmtM(creances),open.length+' ventes ou factures non soldées')}
   ${kpi('TTC · documents émis','Ventes facturées',fmtM(invoiced),S.invoices.filter(i=>inRange(i.date,r)).length+' factures sur la période')}
-  ${kpi('Registre des dépenses','Dépenses',fmtM(depenses),'Depuis janvier : '+fmtM(S.expenses.filter(e=>e.date>=TODAY.slice(0,4)+'-01-01').reduce((a,e)=>a+e.amount,0)))}
+  ${kpi('Registre des dépenses','Dépenses',fmtM(depenses),depPrev?`<span class="delta ${depenses<=depPrev?'up':'down'}">${depenses>=depPrev?'▲':'▼'} ${Math.abs(Math.round((depenses-depPrev)/depPrev*1000)/10).toLocaleString('fr-FR')} %</span> vs ${r.plabel}`:'Rien sur la période précédente')}
   ${kpi('À valoir sur prestations','Avances clients',fmtM(advTot),advOpen.length+' avance'+(advOpen.length>1?'s':'')+' non consommée'+(advOpen.length>1?'s':''))}
   ${cost?kpi('Estimation','Marge brute estimée',fmtM(margin),'Taux '+pct(margin,ca).toLocaleString('fr-FR')+' % · coûts saisis au catalogue'):kpi('Estimation','Marge brute estimée','—','Coûts des prestations à saisir au catalogue')}
  </div>`:'';
- // graphique : CA journalier sur 30 jours
- const days=[...Array(30)].map((_,i)=>addDays(TODAY,i-29));
- const vals=days.map(d=>sumLines(linesIn({from:d,to:d},f)));
- const prevAvg=Math.round(sumLines(linesIn({from:addDays(TODAY,-59),to:addDays(TODAY,-30)},f))/26);
- const max=Math.max(...vals,prevAvg,1); const step=niceStep(max); const top=Math.ceil(max/step)*step;
- const W=640,H=200,L=44,B=24,T=10; const bw=(W-L-8)/30;
+ // graphique : ventes (CA HT) et dépenses par jour, semaine ou mois selon la période choisie
+ const buckets=(()=>{const out=[];
+  if(ui.period==='jour'){for(let i=13;i>=0;i--){const d=addDays(ui.ref,-i);out.push({from:d,to:d,lab:d.slice(8,10)+'/'+d.slice(5,7),cur:d===ui.ref,tip:fmtD(d)})}}
+  else if(ui.period==='semaine'){const mon=addDays(ui.ref,-((dow(ui.ref)+6)%7));for(let i=7;i>=0;i--){const a=addDays(mon,-7*i),b=minD(addDays(a,6),TODAY);out.push({from:a,to:b,lab:a.slice(8,10)+'/'+a.slice(5,7),cur:i===0,tip:'Semaine du '+fmtD(a)})}}
+  else{const base=ui.period==='annee'?ui.ref.slice(0,4)+'-12-01':ui.ref.slice(0,8)+'01';for(let i=11;i>=0;i--){const a=shiftMonth(base,-i).slice(0,8)+'01',b=minD(lastOfMonth(a),TODAY);if(a>TODAY&&ui.period==='annee')continue;out.push({from:a,to:b,lab:MOIS[+a.slice(5,7)-1].slice(0,4)+'.',cur:ui.period==='mois'?i===0:false,tip:MOIS[+a.slice(5,7)-1]+' '+a.slice(0,4)})}}
+  return out.filter(b=>b.from<=TODAY)})();
+ const bv=buckets.map(b=>({...b,ca:sumLines(linesIn(b,f)),dep:expIn(b).reduce((a,e)=>a+e.amount,0)}));
+ const max=Math.max(...bv.map(b=>Math.max(b.ca,b.dep)),1); const step=niceStep(max); const top=Math.ceil(max/step)*step;
+ const W=660,H=220,L=48,B=24,T=10; const gw=(W-L-8)/Math.max(bv.length,1), bw=Math.min(18,(gw-6)/2);
  const y=v=>T+(H-T-B)*(1-v/top);
  let ticks='';for(let v=0;v<=top;v+=step)ticks+=`<line x1="${L}" x2="${W-4}" y1="${y(v)}" y2="${y(v)}" stroke="var(--line)" stroke-width="1"/><text x="${L-6}" y="${y(v)+4}" text-anchor="end" font-size="10.5" fill="var(--muted)">${fmtShort(v)}</text>`;
- const bars=vals.map((v,i)=>{const d=days[i];const lab=(i%5===4||i===29)?`<text x="${L+i*bw+bw/2}" y="${H-8}" text-anchor="middle" font-size="10.5" fill="var(--muted)">${d.slice(8,10)}/${d.slice(5,7)}</text>`:'';
-  return `<rect x="${L+i*bw+2}" y="${y(v)}" width="${bw-4}" height="${Math.max(0,H-B-y(v))}" rx="2" fill="${d===TODAY?'var(--sage-deep)':dow(d)===0?'var(--sand-2)':'var(--sage)'}"><title>${fmtD(d)} : ${fmtM(v)}</title></rect>${lab}`}).join('');
- const avgLine=`<line x1="${L}" x2="${W-4}" y1="${y(prevAvg)}" y2="${y(prevAvg)}" stroke="var(--terra)" stroke-dasharray="4 4" stroke-width="1.2"/><text x="${W-6}" y="${y(prevAvg)-5}" text-anchor="end" font-size="10.5" fill="var(--terra)">moyenne des 30 jours précédents</text>`;
- const chart=`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Chiffre d'affaires journalier sur 30 jours">${ticks}${bars}${avgLine}</svg>`;
+ const every=Math.ceil(bv.length/12);
+ const bars=bv.map((b,i)=>{const cx=L+i*gw+gw/2;const lab=(i%every===0||b.cur)?`<text x="${cx}" y="${H-8}" text-anchor="middle" font-size="10.5" fill="${b.cur?'var(--ink)':'var(--muted)'}" ${b.cur?'font-weight="600"':''}>${b.lab}</text>`:'';
+  return `${b.cur?`<rect x="${L+i*gw+1}" y="${T}" width="${gw-2}" height="${H-B-T}" fill="var(--sage-tint)" rx="3"/>`:''}<rect x="${cx-bw-1}" y="${y(b.ca)}" width="${bw}" height="${Math.max(0,H-B-y(b.ca))}" rx="2" fill="var(--sage-deep)"><title>${b.tip} · ventes : ${fmtM(b.ca)}</title></rect><rect x="${cx+1}" y="${y(b.dep)}" width="${bw}" height="${Math.max(0,H-B-y(b.dep))}" rx="2" fill="var(--terra)"><title>${b.tip} · dépenses : ${fmtM(b.dep)}</title></rect>${lab}`}).join('');
+ const unit=ui.period==='jour'?'par jour, 14 derniers jours':ui.period==='semaine'?'par semaine, 8 dernières semaines':ui.period==='annee'?'par mois de l\'année '+ui.ref.slice(0,4):'par mois, 12 derniers mois';
+ const chart=`<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Ventes et dépenses ${unit}">${ticks}${bars}</svg>`;
+ const legend=`<div class="row note" style="gap:14px;margin-top:6px"><span><i style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--sage-deep);margin-right:5px"></i>Ventes (CA HT)</span><span><i style="display:inline-block;width:10px;height:10px;border-radius:2px;background:var(--terra);margin-right:5px"></i>Dépenses</span><span>Fond clair : période sélectionnée</span></div>`;
+ // détail de la période : ventes par catégorie, dépenses par catégorie
+ const byCat={};cur.forEach(l=>{const k=l.kind==='P'?'Herboristerie':l.cat;const o=byCat[k]=byCat[k]||{ca:0,cost:0,nocost:0,n:0};o.ca+=lineHT(l);o.cost+=lineCost(l);o.n+=l.qty;if(!l.cost&&lineHT(l)>0)o.nocost+=lineHT(l)});
+ const expCat={};expIn(r).forEach(e=>{expCat[e.cat]=(expCat[e.cat]||0)+e.amount});
+ const expRows=Object.entries(expCat).sort((a,b)=>b[1]-a[1]);
+ const nSales=new Set(cur.map(l=>l.sale.id)).size;
+ const suivi=isAdmin()?`<div class="card"><div class="card-h"><div><h3>Ventes et dépenses</h3><div class="note">Montants en DT, ${unit}. Les dépenses sont celles du registre (montants payés).</div></div></div><div style="overflow-x:auto">${chart}</div>${legend}
+  <div class="grid2" style="margin-top:16px">
+   <div><div class="eyebrow" style="margin-bottom:8px">Ventes · ${esc(r.label)}</div><div class="totals">
+    <div class="spread"><span class="muted">Chiffre d'affaires HT</span><b class="num">${fmtM(ca)}</b></div>
+    <div class="spread"><span class="muted">Nombre de ventes</span><span class="num">${nSales}</span></div>
+    <div class="spread"><span class="muted">Panier moyen</span><span class="num">${nSales?fmtM(Math.round(ca/nSales)):'—'}</span></div>
+    <div class="spread"><span class="muted">Encaissements</span><span class="num">${fmtM(enc)}</span></div></div>
+    <div class="toplist" style="margin-top:10px">${Object.entries(byCat).sort((a,b)=>b[1].ca-a[1].ca).map(([k,o])=>`<div class="it"><div class="spread"><span>${esc(k)}</span><span class="num muted">${fmtM(o.ca)}</span></div><div class="bar"><i style="width:${ca?o.ca/ca*100:0}%"></i></div></div>`).join('')||'<p class="note">Aucune vente sur la période.</p>'}</div></div>
+   <div><div class="eyebrow" style="margin-bottom:8px">Dépenses · ${esc(r.label)}</div><div class="totals">
+    <div class="spread"><span class="muted">Total des dépenses</span><b class="num">${fmtM(depenses)}</b></div>
+    <div class="spread"><span class="muted">Charges fixes</span><span class="num">${fmtM(expIn(r).filter(e=>e.axe==='Fixe').reduce((a,e)=>a+e.amount,0))}</span></div>
+    <div class="spread"><span class="muted">Charges variables</span><span class="num">${fmtM(expIn(r).filter(e=>e.axe!=='Fixe').reduce((a,e)=>a+e.amount,0))}</span></div>
+    <div class="spread"><span class="muted">Nombre de dépenses</span><span class="num">${expIn(r).length}</span></div></div>
+    <div class="toplist" style="margin-top:10px">${expRows.slice(0,6).map(([k,v])=>`<div class="it"><div class="spread"><span>${esc(k)}</span><span class="num muted">${fmtM(v)}</span></div><div class="bar terra"><i style="width:${depenses?v/depenses*100:0}%"></i></div></div>`).join('')||'<p class="note">Aucune dépense sur la période.</p>'}${expRows.length>6?`<p class="note">+ ${expRows.length-6} autre${expRows.length>7?'s':''} catégorie${expRows.length>7?'s':''}</p>`:''}</div></div>
+  </div></div>`:'';
+ // analyse de la marge
+ const covered=ca?pct(ca-Object.values(byCat).reduce((a,o)=>a+o.nocost,0),ca):0;
+ const resultat=ca-depenses, treso=enc-depenses;
+ const mrow=(k,o)=>`<tr><td>${esc(k)}</td><td class="r num">${fmtM(o.ca)}</td><td class="r num">${o.cost?fmtM(o.cost):'—'}</td><td class="r num">${o.cost?fmtM(o.ca-o.cost):'—'}</td><td class="r num">${o.cost&&o.ca?pct(o.ca-o.cost,o.ca).toLocaleString('fr-FR')+' %':'—'}</td><td>${o.nocost>0?`<span class="pill p-warn">${o.nocost>=o.ca?'Coûts à saisir':'Coûts incomplets'}</span>`:'<span class="pill p-good">Complet</span>'}</td></tr>`;
+ const marge=isAdmin()?`<div class="card"><div class="card-h"><div><h3>Analyse de la marge</h3><div class="note">${esc(r.label)} · comparée à ${esc(r.plabel)}</div></div></div>
+  <div class="kpis" style="margin-bottom:14px">
+   <div class="kpi"><div class="eyebrow">Marge brute</div><div class="v num">${cost?fmtM(margin):'—'}</div><div class="s">${cost?'Taux '+pct(margin,ca).toLocaleString('fr-FR')+' % · CA HT − coûts directs saisis au catalogue':'Saisissez les coûts des prestations au catalogue'}</div></div>
+   <div class="kpi"><div class="eyebrow">Résultat estimé</div><div class="v num" style="color:${resultat<0?'var(--crit)':'inherit'}">${fmtM(resultat)}</div><div class="s">CA HT − dépenses du registre · ${ca?pct(resultat,ca).toLocaleString('fr-FR')+' % du CA':'pas de vente'}</div></div>
+   <div class="kpi"><div class="eyebrow">Solde de trésorerie</div><div class="v num" style="color:${treso<0?'var(--crit)':'inherit'}">${fmtM(treso)}</div><div class="s">Encaissements − dépenses payées sur la période</div></div>
+  </div>
+  <div class="tbl-wrap"><table><thead><tr><th>Activité</th><th class="r">CA HT</th><th class="r">Coûts directs</th><th class="r">Marge brute</th><th class="r">Taux</th><th>Coûts saisis</th></tr></thead><tbody>${Object.entries(byCat).sort((a,b)=>b[1].ca-a[1].ca).map(([k,o])=>mrow(k,o)).join('')||'<tr><td colspan="6" class="note">Aucune vente sur la période.</td></tr>'}</tbody></table></div>
+  <p class="note" style="margin-top:10px">Coûts directs renseignés pour ${covered.toLocaleString('fr-FR')} % du chiffre d'affaires de la période. La marge brute utilise les coûts du catalogue ; le résultat estimé utilise le registre des dépenses (loyer, salaires, honoraires, achats…). Les deux ne s'additionnent pas : les honoraires et achats font déjà partie des dépenses. Il s'agit d'estimations de gestion, pas d'un résultat comptable.</p></div>`:'';
  const top5=(kind)=>{const m={};cur.filter(l=>l.kind===kind).forEach(l=>{m[l.name]=m[l.name]||{q:0,v:0};m[l.name].q+=l.qty;m[l.name].v+=lineHT(l)});const arr=Object.entries(m).sort((a,b)=>b[1].q-a[1].q).slice(0,5);const mx=arr[0]?arr[0][1].q:1;
   return arr.length?arr.map(([n,o])=>`<div class="it"><div class="spread"><span>${esc(n)}</span><span class="num muted">${o.q}${isAdmin()?' · '+fmtM(o.v):''}</span></div><div class="bar ${kind==='P'?'terra':''}"><i style="width:${o.q/mx*100}%"></i></div></div>`).join(''):'<p class="note">Aucune vente sur la période.</p>'};
  const alerts=[];
@@ -657,25 +713,27 @@ function viewDashboard(){
  const lateInv=S.invoices.filter(i=>invStatus(i)==='en retard');
  if(isAdmin()&&lateInv.length) alerts.unshift(['crit',`<b>${lateInv.length} facture${lateInv.length>1?'s':''} en retard</b> · ${lateInv.map(i=>i.no).join(', ')}`]);
  const ops=`<div class="kpis">
-  ${kpi('','Rendez-vous du jour',activeB.length,todayB.filter(b=>b.status==='honoré').length+' honorés · '+todayB.filter(b=>b.status==='absent').length+' absence','ops')}
-  ${kpi('','Taux d\'occupation',occ.toLocaleString('fr-FR')+' %','Minutes réservées / '+STAFF.length+' intervenants × 11 h','ops')}
-  ${kpi('','Clients reçus aujourd\'hui',seen.size,todaySales.length+' ventes enregistrées','ops')}
+  ${kpi('',D===TODAY?'Rendez-vous du jour':'Rendez-vous du '+fmtD(D),activeB.length,todayB.filter(b=>b.status==='honoré').length+' honorés · '+todayB.filter(b=>b.status==='absent').length+' absence','ops')}
+  ${kpi('','Taux d\'occupation',occ.toLocaleString('fr-FR')+' %',(D===TODAY?'Aujourd\'hui':'Le '+fmtD(D))+' · minutes réservées / '+STAFF.length+' intervenants × 11 h','ops')}
+  ${kpi('','Clients reçus '+Dlab,seen.size,todaySales.length+' ventes enregistrées','ops')}
   ${kpi('','Devis en attente',pendingQ.length,pendingQ.length?'Montant '+(isAdmin()?fmtM(pendingQ.reduce((a,q)=>a+docTotal(q.lines),0)):'masqué'):'Aucun','ops')}
  </div>`;
+ const PER=[['jour','Jour'],['semaine','Semaine'],['mois','Mois'],['annee','Année']];
  const filters=`<div class="row">
-  <div class="chips" role="group" aria-label="Période">${[['jour','Jour'],['7j','7 jours'],['mois','Mois'],['30j','30 jours']].map(([k,l])=>`<button class="chip ${ui.period===k?'on':''}" data-a="period" data-p="${k}">${l}</button>`).join('')}</div>
+  <div class="chips" role="group" aria-label="Période">${PER.map(([k,l])=>`<button class="chip ${ui.period===k?'on':''}" data-a="period" data-p="${k}">${l}</button>`).join('')}</div>
+  <div class="row" style="gap:6px;flex-wrap:nowrap"><button class="btn sm" data-a="refshift" data-n="-1" aria-label="Période précédente">‹</button><input class="input" type="date" id="f-ref" data-in="fref" value="${ui.ref}" max="${TODAY}" aria-label="Date de référence" style="width:auto"><button class="btn sm" data-a="refshift" data-n="1" aria-label="Période suivante" ${shiftRef(ui.period,ui.ref,1)>TODAY&&periodAt(ui.period,ui.ref).to>=TODAY?'disabled':''}>›</button>${ui.ref!==TODAY?'<button class="btn sm" data-a="reftoday">Aujourd\'hui</button>':''}</div>
   ${isAdmin()?`<select class="input" id="f-cat" data-in="fcat" style="width:auto">${['toutes',...SERVICE_CATS,'Herboristerie'].map(c=>`<option value="${c}" ${ui.fcat===c?'selected':''}>${c==='toutes'?'Toutes catégories':c}</option>`).join('')}</select>
   <select class="input" id="f-user" data-in="fuser" style="width:auto"><option value="tous">Tous les utilisateurs</option>${userList().map(u=>`<option value="${u.id}" ${ui.fuser===u.id?'selected':''}>${esc(u.name)}</option>`).join('')}</select>`:''}
  </div>`;
  const myCash=S.cash?`<div class="card"><div class="card-h"><h3>Ma caisse</h3>${S.cash?pill('confirmé').replace('Confirmé','Ouverte'):''}</div><div class="totals"><div class="spread"><span class="muted">Solde théorique espèces</span><b class="num">${fmtM(cashTheo(S.cash))}</b></div><div class="spread"><span class="muted">Ouverte à</span><span>${S.cash.openTime} par ${userName(S.cash.user)}</span></div></div><button class="btn sm" style="margin-top:12px" data-a="go" data-v="caisse">Voir la caisse</button></div>`:'';
  const agendaToday=`<div class="card"><div class="card-h"><h3>Prochains rendez-vous</h3><button class="btn sm" data-a="go" data-v="agenda">Agenda</button></div><div class="toplist">${S.bookings.filter(b=>b.date===TODAY&&b.serviceId&&b.status==='confirmé'&&b.start>=nowMin()-30).sort((a,b)=>a.start-b.start).slice(0,5).map(b=>`<div class="spread"><span><b class="num">${hm(b.start)}</b> · ${esc(svc(b.serviceId).name)}</span><span class="muted">${b.clientId?esc(cname(b.clientId)):b.size+' inscrits'}</span></div>`).join('')||'<p class="note">Plus aucun rendez-vous confirmé aujourd\'hui.</p>'}</div></div>`;
  return `
- <div class="head"><div><h1>${isAdmin()?'Activité de KAYANI':'Bonjour Ines'}</h1><p>${r.label} · du ${fmtD(r.from)} au ${fmtD(r.to)}. ${isAdmin()?'Le chiffre d\'affaires, les encaissements, les créances et les dépenses sont des mesures distinctes : ne les additionnez pas.':'Vue opérationnelle : les indicateurs financiers sont réservés à l\'administrateur.'}</p></div>${filters}</div>
+ <div class="head"><div><h1>${isAdmin()?'Activité de KAYANI':'Bonjour '+esc(String(ui.user.name||'').split(' ')[0])}</h1><p>${esc(r.label.charAt(0).toUpperCase()+r.label.slice(1))} · du ${fmtD(r.from)} au ${fmtD(r.to)}. ${isAdmin()?'Le chiffre d\'affaires, les encaissements, les créances et les dépenses sont des mesures distinctes : ne les additionnez pas.':'Vue opérationnelle : les indicateurs financiers sont réservés à l\'administrateur.'}</p></div>${filters}</div>
  ${fin}
  ${ops}
  <div class="dash">
   <div style="display:grid;gap:16px;min-width:0">
-   ${isAdmin()?`<div class="card"><div class="card-h"><div><h3>Évolution du chiffre d'affaires</h3><div class="note">CA journalier des 30 derniers jours, en DT. Barre foncée : aujourd'hui. Dimanche : fermé.</div></div></div><div style="overflow-x:auto">${chart}</div></div>`:agendaToday}
+   ${isAdmin()?suivi+marge:agendaToday}
    <div class="grid2"><div class="card"><h3 style="margin-bottom:12px">Prestations les plus vendues</h3><div class="toplist">${top5('S')}</div></div><div class="card"><h3 style="margin-bottom:12px">Produits les plus vendus</h3><div class="toplist">${top5('P')}</div></div></div>
   </div>
   <div style="display:grid;gap:16px;align-content:start;min-width:0">
@@ -1160,6 +1218,8 @@ const A={
  closeModal:()=>{ui.modal=null;render()},
  closeModalBg:(d,el,e)=>{if(e.target===el){ui.modal=null;render()}},
  period:d=>{ui.period=d.p;render()},
+ refshift:d=>{const n=shiftRef(ui.period,ui.ref,+d.n);ui.ref=n>TODAY?TODAY:n;render()},
+ reftoday:()=>{ui.ref=TODAY;render()},
  poscat:d=>{ui.pos.cat=d.c;render()},
  add:d=>{const P=ui.pos;const ex=P.cart.find(l=>l.kind===d.k&&l.refId===d.id);if(d.k==='P'){const p=prd(d.id);const inCart=ex?ex.qty:0;if(inCart+1>p.stock){toast(`Stock insuffisant : ${p.stock} disponible${p.stock>1?'s':''}.`,true);return}}
   if(ex) ex.qty++; else P.cart.push(mkLine(d.k,d.id));if(!P.key)P.key=uid('cart');render()},
@@ -1312,6 +1372,7 @@ const INPUT={
  disc:(v,el)=>{const n=Math.max(0,Math.min(100,parseFloat(v.replace(',','.'))||0));ui.pos.cart[+el.dataset.i].disc=n},
  catq:v=>{ui.cat.q=v},salesq:v=>{ui.sales.q=v;ui.sales.page=1},salesmonth:v=>{ui.sales.month=v;ui.sales.page=1},advq:v=>{ui.adv.q=v},expmonth:v=>{ui.exp.month=v},nasvc:(v)=>{const el=document.getElementById('na-purpose');const am=document.getElementById('na-amount');if(v&&el&&!el.value)el.value=svc(v).name;if(v&&am&&!am.value)am.value=toInput(svc(v).price);return false},cliq:v=>{ui.cli.q=v;ui.cli.page=1},docsq:v=>{ui.docs.q=v},expq:v=>{ui.exp.q=v},
  fcat:v=>{ui.fcat=v},fuser:v=>{ui.fuser=v},
+ fref:v=>{if(/^\d{4}-\d{2}-\d{2}$/.test(v)){ui.ref=v>TODAY?TODAY:v;return}return false},
  set:(v,el)=>{S.settings[el.dataset.k]=v;return false},
  tva:(v,el)=>{S.settings.tva[el.dataset.k]=v;return false},
  'disc-max':v=>{const n=parseInt(v);if(n>=0&&n<=100)S.perms.discountMax=n;return false},
