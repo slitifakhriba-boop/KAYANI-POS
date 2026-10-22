@@ -3,7 +3,7 @@
 Caisse, clients, agenda et gestion du centre de bien-être **KAYANI**.
 Application web installable (PWA) : elle s'installe sur PC, iPhone et iPad, fonctionne **hors ligne** et se **synchronise** avec Supabase dès que la connexion revient.
 
-Version 2.6, 22/10/2026.
+Version 2.7, 22/10/2026.
 
 ---
 

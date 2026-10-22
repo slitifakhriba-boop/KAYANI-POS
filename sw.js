@@ -1,6 +1,6 @@
 /* KAYANI POS — service worker : garde l'application en cache pour un usage hors ligne.
    Les données ne passent pas par ici (IndexedDB + Supabase). Changer VERSION à chaque mise en ligne. */
-const VERSION='kayani-2.6.0';
+const VERSION='kayani-2.7.0';
 const SHELL=['./','index.html','sync.js','config.js','manifest.webmanifest','supabase.js','fonts.css',
  'icon-192.png','icon-512.png','icon-maskable-512.png','apple-touch-icon.png','favicon-32.png'];
 self.addEventListener('install',e=>{e.waitUntil(caches.open(VERSION).then(c=>c.addAll(SHELL)))});
