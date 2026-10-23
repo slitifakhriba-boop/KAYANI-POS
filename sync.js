@@ -37,6 +37,7 @@ const COLS=[
  ['clients','clients'],['sales','sales'],['payments','payments'],['invoices','invoices'],['quotes','quotes'],
  ['expenses','expenses'],['stock_moves','stockMoves'],['bookings','bookings'],['memberships','memberships'],
  ['advances','advances'],['services','services'],['products','products'],['audit','audit'],['cash','cashSessions'],
+ ['credits','credits'],['team','team'],['presence','presence'],['team_events','teamEvents'],['attendance','attendance'],
  ['gcal','gcal'], // état de synchronisation Google Agenda, écrit par la fonction gcal-sync (lecture seule ici)
 ];
 const keyOf=(c,id)=>c+'|'+id;
