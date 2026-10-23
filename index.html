@@ -154,6 +154,15 @@ tbody tr.click:hover{background:var(--sand)}
 .subhead{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600;margin:4px 0 -2px}
 .day-sum{display:flex;gap:8px 18px;flex-wrap:wrap;font-size:13px}
 .day-sum b{font-variant-numeric:tabular-nums}
+.topsum{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(22px,env(safe-area-inset-left,0px));background:var(--surface);border-bottom:1px solid var(--line);font-size:13px}
+.topsum .chip{padding:3px 10px;font-size:12px}
+.ts-it{display:flex;flex-direction:column;line-height:1.2}.ts-it span{font-size:11px;color:var(--muted);letter-spacing:.03em}.ts-it b{font-size:14px}
+.ts-al{margin-left:auto;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:5px 12px;font:inherit;font-size:12.5px;font-weight:600;cursor:pointer;color:var(--muted)}
+.ts-al.warn{background:var(--warn-tint);color:var(--warn);border-color:transparent}.ts-al.crit{background:var(--crit-tint);color:var(--crit);border-color:transparent}
+.cash-banner{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;padding:14px 18px;border-radius:12px;margin-bottom:16px}
+.cash-banner.closed{background:var(--warn-tint)}.cash-banner.late{background:var(--crit-tint)}.cash-banner.eod{background:var(--sage-tint)}
+.cash-banner b{font-size:15px}
+@media (max-width:640px){.topsum{gap:6px 12px}.ts-it b{font-size:13px}}
 .pay-quick{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .pay-quick .btn{justify-content:center;padding:16px 10px;font-size:16px;font-weight:600}
 .pay-quick .btn.wide{grid-column:1/-1}
@@ -352,7 +361,7 @@ const ic=(n,cls='')=>`<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke
 /* ---------- Données de démonstration ---------- */
 const USERS={admin:{id:'u-admin',name:'Direction KAYANI',short:'DK',role:'admin',email:'direction@kayani.tn'},assistant:{id:'u-assist',name:'Assistante accueil',short:'AS',role:'assistant',email:'accueil@kayani.tn'}};
 const LOGO='data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBAUEBAYFBQUGBgYHCQ4JCQgICRINDQoOFRIWFhUSFBQXGiEcFxgfGRQUHScdHyIjJSUlFhwpLCgkKyEkJST/2wBDAQYGBgkICREJCREkGBQYJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCQkJCT/wAARCADAAMADASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD3miiiuI9UKKKKACiiigAooooAKKKKACiiigAoqOe5gtQDPNHED03sBn6etRxX8E7hYvNfP8Qifb+ZGKBXRYooooGFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUANlljgieWV1jjQFmZjgKB3NUka71IbwZLK1P3eMTSj15+4P/HvpTJP+JnqptzzbWO15B2kmPKg+yjDfVl9K0qexPxehDb2NtaktDCiuernlz9WPJ/OpySevNJRSKStsFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFKBkgevFJSg4IPpQBi+FJvtWnXN0Tlp765ZvwkKgfgFArZrmfBEvlf21pbcSWOpzcf7Eh3qf1NdNVTXvGdF3ggoooqTQKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAOJ12f/AIRDxpba2+V03VUFpdt2jkX7jn8P0BrtgcjIOfpVHW9Htdf0u4068XMUy4yOqHsw9wa47wr4kuvDN+PCfiVwjx4WyvGOElT+EEnt6Ht0Na2543W6Obm9lOz2f5ndyPKn3IRJ/wADA/nVeTU/I5nsr2Ne7LF5qj/vgk/pV3pSVkdDT7laz1Oy1AkWl1DMy/eRG+ZfqvUfiKs1U1DSLDVQPtlrHKy/dk6SJ9HGGH4Gs2S113RvnsJzrFqOtrduFnUf7EvRvo4/GnZPYlycd193+Ru0VnaP4gsdbEi27vHcQnE1rMuyaE+jKf5jitGk1bRlKSkroKKKKBhRRRQAUUUUAFFFFABRRRQAUUVT1G9a28qC3VXu7glYUboMdXb/AGVHJ9eB1NCVxN21LBmHm+UvzPjLeij1P9KkqK1tltYtgZnYnc8jfekbux/zx0qWgav1CqOp3EoMNlbPsubokB8Z8pBy7/gCAPdhV6sewl+1eJ9VY8i0hgtl9twaRv5r+VNLqTN7Lua0UawxrGm7agCjcxY49yep96yfE/haw8VWBtb1drrkxTqPniPqPUeo71sUUJtO6HKKkuVrQ810nxTqngO9TQvFQeayPFtfrlsL9erL7feX3FejwzRXMSTQyJLFIAyOhyrD1Bqtq2kWOuWL2WoQLPA/Y8FT2KnsfevOXXXPhRd7kMmpeHZX5B6xE/8AoLf+Ot7GtbKptozl5pUPi1j+K/4B6lRVPSNXstdsI76wmE0EnfoVPdSOxHpVysWrbnUmmrox9e8NQa0Uuo5XstTgH+j30PDx+x/vL6qaq6B4kuJL5tD12JLXWI13KU/1V2n9+M/zXtXRVj+J/DcPiOxEfmG3vID5lrdLw0Eg6HPoe4q4yT0kZTg0+eG/5mxRXPeEPEc2sQT2OpRiDWLBvKuoum70dfY/56iuhqZRadmaQmpx5kFFFFIoKKKKACiiigAooooAbJIkMbSSOqIgLMzHhQOSTWVoCvfB9bnVlkvAPIRusVuDlB9W++fcj0qDxW5uxYaEhIbVJtkuOot0G6T8wAv/AAKt4AAYAAA6AdqeyM/in6fmFFFFI0Cub0icQeN9fsmOGnhtrtB6gKUP6gV0lcN48nl8Na9o/iqNGaCPNndhe8bcj+uPcCrpq75TGvLlSn2f/AO5opkE8VzDHPDIskUih0dTwykZBFOd1jRndlRFBLMxwAB1JqDa4tMngiuYXgnjSWKRSro4yrA9iKoaF4i0zxJbNcaZciZUYq64wy89x1weoPetLNDTT1EmpK61R5ff2N18K9cXVNP82bQLtwk8BOfKPp9R1U/UGvTYJo7mGOeFxJFIodGHRlIyDWd4obTV0C9XV5I47N4mVy5744x6tnGMd6i8F281r4S0iG4yJVtU3A9RnkD8iK0nLmim9znpQ9nNwjtv6GzRRRWZ0nF+OrabQr608Y2CEyWhEN7Gv/LaAnHP0/w9K7C1uYb22iubdw8MyCRGHdSMg0l3aw31rNa3C7oZkaNx6qRg1x/wzu5ra31Hw3dsTcaRcMi56mIk4/XP5itPij6HP8FW3SX5/wDBO1ooorM6AooooAKKKKACiijGePWgDmrJ/wC0fHuoynlNMs47VPZ5Dvf9Aorpa5XwK32i48R3h6zatKufZAFFdVVz3sZUHeN+7YUUUVBqFVNX0u21rTbjT7td0M6bWx1HoR7g4Iq3RQnYTSaszzLwpr114G1ZvCniF9truzaXR+4ATxz/AHD/AOOnIr0uSNJo2jkUPG4Ksp5DAjkflWT4n8LWHirTzaXilXXJhnUfPE3qPUeo71xOkeJtV+H96mg+JlebTzxbXiAttX27lfbqvuK2aVTVbnJGToe5P4ej7eTMaz+HOsPPf3Oh36QzWV7LahDI0TbVwQQ49iODVo6d8VI/3Qn1Fh03C5jI/PNeg+FHjuYdTv4WV4LzUJpYnU8Og2oGHsdprZmEjQyCFlWUqdjMMgNjgkemcVTrNOzSM4YKLjeLa9GeYaR8Mda1S/ivfFd+0kaMGMJmMrv7E9FHrivUgABgAADsO1cZ8PdZ1qabUND1+ORr3T8N57cl1YnAJ7+oPcfSuzrOrKTdmb4WEFC8OvfcKKKKzOkK4O6b+xfi3ayL8sWsWnlt7uAR/NF/Ou8rz/4mN9j1vwrqC8NFdlM+25D/AI1pS1du5z4rSKl2aPQKKUjBI9DikrM6AooooAKKKKAClX7w+opKOlAHI/Ddv9C1lD95NWuM/iRXXVxvglhZ+JvFmmE4K3ouVH+y4PP8q7KrqfEYYb+GkFFFFQbhRRRQBjeL7bWLvQZ4tCn8m+yrKQ21mAOSqnsT/wDW71leHpm8eeGp7XxHpuyWGY28gKlCXUD517qwz27+3FddWb4muJ7Tw5qlxbZE8drKyEdQdp5/Dr+FXGWnKjGcNXNvS2qPPSmufCe9LLv1Lw9M/I6GMn/0Fv8Ax1vrXo+laxaa5py32mzLPG4O3PBDY+6w7H1qt4f1Gy8SeHbadAk8M0Ijljf5gGAAZWFcdqPh7Ufh5fya74dV7jSm5vLAkkqvqPUDseo75FaO09HuYRvRXNDWD/D/AIBf+HHiR9Sl1HTtRt2i1iKRpbhyP9b823n028KB0xjHeu4rP0efTdUgXWrCOM/bY13TBQHYDOFY+oORWhWU3dnRRi4wSbv5hRRRUmoV558XWyfD6D7xvSR/47/jXodedfEA/wBo+OfC+lLztkErD0y4P8kNa0fjObGfwmu9vzPRm+831NJSk5JPrzSVkdIUUUUAFFFFABRRRQBw+ov/AGF8ULG7b5bfWbb7Mx7eYvT+S/nXcVynxK0WTVfDjXFrkXmnOLuEr1+X72Pw5/4DWt4X12LxJoVrqUZG6RcSqP4JBww/Pn6EVpJXipfI56b5akoPrqv1NWiiiszoCqF3K82p2tjGzKFBupypwdinCr/wJj+Smr9ZGlyifX9cY/eha3tx7KI9/wDNzTXcib2Xc16ZcPDHBI1wyLCFO8yEBQvfOe1PrP8AEGjR+INHudMmmlhS4XaXj6jByOO4yOR3pLcqV7Ox51qei678N9Ql1Xw8Tc6PKd0sByyxj0cDnA7OO3X37nwh4rtvF+mNdwwvBJE3lzRPyFbGeD3BFeff2p4o8Dsnhy/vY7eznYJb6k8ZkEMfQlP8D936V6R4Z8O2nhnS1srRnlDMZJJXxulY/wAXH4Yroq25dd+5wYW/O1DRdU+j8h2gabBpMF1aWq7LdbuVo0HRA2GKj2BJrTqOCIRIQG3bmZyfUkk//W/CpKwbuzvirKyCiiikMXrXm2gMPEvxU1LVFO6202MxRt2yPkH67zXVeN/EK+G/DtzdqwFw48m3HrIw6/gMn8KzvhdoLaN4ZSeZSLm/b7Q+7qFxhAfw5/4FWsfdg5d9Dlq+/VjBdNX+h19FFFZHUFFFFABRRRQAUUUUABGRggEehrzS0mPw18Yy2UxKaDqrb4nP3YW/+sTg+xB7V6XWV4n8OWvijSZNPuflJ+aKUDJifsw/qO4q6cknZ7Mxr03JKUN1saoORmivOvB/iq68OX3/AAinic+VJFhLW5c/Ky/wqW/un+FvwNei0pwcWOlVVRXQVy32xdD8eSwXDbLfW4I2hc9PPjG0r9SpH6V1NZPibw5a+KNLaxuS0bA74Zl+9C46MP6iiLXUdWLavHdGtRXmMvi7xl4JP2TWtNXU7dOEvBuG8e7gEf8AfQzUEvxtuHXba6HEJD033Bb9ABWnsJPbUweNpLSWj9D0LxJpNhrOjXVrqWxbfYXMjceUQOHB7Y/+tVDwU0194H00SzOkj2pjEq/eA+ZVYZ9sGuKgsPGfxFkRdVZ9N0csC6hPLVx/sqeWPueBXqMFrHZ2SWloBDHFGI4h1CADA+uKU1yrlbHSl7STqJWVvvOP+HVvrGj3Oq6DqDi4tbBl8mcHIy2SVB+mGx2J967auG+G99rFvcah4d1i2YS2JMwuCPv72Ocn+LPLA+mfSu5pVfiLwtvZqwUjMqKWZgqqMkk4AHrSk4GTXmPjDxVdeLr8eFfDJ81JDi4uFPyuB1GeyDue/Qe6hByZVasqau9+iIHd/ij40RE3f2FpvJPQSDPX6uRj/dFeqgAAAAADgAdqyvDPh218L6THYW3zEfNLKRgyuerH+g7CtWnUmnotkTQpOCcpfE9wooorM3CiiigAooooAKKKKACiiigDF8U+E9P8WWP2e7XZMgPk3Cj5oj/UHuK4qw8Ta78O7iPSvEkEl5pv3YLuP5iq+xP3h/snkV6fUN3Z22oWz213BHcQSDDRyLlTWkallyy1RhUoXfPB2l/W5Fper2GtWoutOuormE9Sh5U+hHUH2NW6871L4W3GnXR1DwlqkthOOfJdyB9A47ezAiq6+PfFnhkiLxJoLTxjj7RGNmffcuUP6U/ZKXwMz+suGlaNvPdHpnYjsaYsEKNuWKNW9QgBrjrD4ueGbtR50l1aMeoli3Afiua1Y/H3haUZXXLMf7zFT+oqXTmuhrHEUpbSRv8AXmisCXx/4WhGW12zPsjFj+grH1D4v+HLRT9n+13jDpsj2L+bY/lQqcnsgliKUd5I7eqGsa7pugWxudSu47dP4QTln9lXqfwrzt/HvjHxSxh8O6O1tE3HnBd5H/A2woq3pPwomvbn7f4q1KS8mbkwxyE59mc849lx9av2SjrNmP1mU9KMb+b2KN/4j1/4lXL6VoNu9npgOJpnONw/22HQf7A5Nd34U8I2HhOx8i1HmTyAedcMPmkP9FHYVq2VlbadbJa2cEdvBGMLHGuFFTVM6l1yx0RpSocr55u8v62CiiiszoCiiigAooooAKKKKACiiigAooooAKKKKACjqCDyD1HrRRQBkX3hHw/qRLXej2UjHqwiCt+a4rLf4W+FHbP9nyp7JcOB/OuroqlOS2ZnKjTlvFfccmvws8KKc/YJW9muHI/nWpY+DvD2mkNa6NZIw6M0e9vzbNbFFDnJ7sUaFOO0V9wAAAKBgDoB0FFFFSahRRRQAUUUUAFFFFABRRRQB//Z';
-const APP_VERSION='2.9';const APP_VERSION_DATE='22/10/2026';
+const APP_VERSION='3.0';const APP_VERSION_DATE='22/10/2026';
 const STAFF=[{id:'st1',name:'Praticienne',spec:'Soins du corps'},{id:'st2',name:'Thérapeute',spec:'Thérapie et counseling'},{id:'st3',name:'Animateurs',spec:'Clubs : chant, danse, yoga'}];
 const ROOMS=['Cabine 1','Cabine 2','Salle calme','Studio'];
 const SERVICE_CATS=['Soins du corps','Thérapie','Clubs','Autres prestations'];
@@ -569,13 +578,13 @@ const STAT={ 'payée':'p-good','émise':'p-sage','partiellement payée':'p-warn'
 const pill=s=>`<span class="pill ${STAT[s]||'p-neutral'}">${esc(s.charAt(0).toUpperCase()+s.slice(1))}</span>`;
 
 /* ---------- État d'interface ---------- */
-const ui={user:null,view:'dashboard',period:'mois',ref:TODAY,fcat:'toutes',fuser:'tous',
+const ui={user:null,view:'pos',top:{p:'jour'},cr:{p:'semaine',ref:TODAY,from:'',to:''},period:'mois',ref:TODAY,fcat:'toutes',fuser:'tous',
  pos:{cashMode:false,tendered:'',detail:false,q:'',cat:'',cart:[],clientId:'',pays:[],method:'Espèces',amount:'',key:null,busy:false,mode:'complet',due:''},
  cat:{tab:'services',q:'',page:1},cli:{q:'',seg:'tous',page:1},docs:{tab:'factures',q:''},exp:{q:'',month:'tous',axe:'tous'},adv:{tab:'avances',st:'ouvertes',q:''},sales:{month:TODAY.slice(0,7),q:'',method:'tous',page:1},
  agenda:{date:TODAY},rep:{type:'ventes',period:'mois'},modal:null,toast:null,nav:false,login:{role:'admin'}};
 const isAdmin=()=>ui.user&&ui.user.role==='admin';
-const ASSIST_VIEWS=['pos','clients','agenda'];
-const canView=v=>(FEATURES.agenda||v!=='agenda')&&(isAdmin()||ASSIST_VIEWS.includes(v));
+const ASSIST_VIEWS=['pos','caisse','clients','agenda','depenses'];
+const canView=v=>(FEATURES.agenda||v!=='agenda')&&(isAdmin()||(ASSIST_VIEWS.includes(v)&&(v!=='depenses'||can('expense'))));
 function can(perm){ if(isAdmin()) return true; const p=S.perms;
  return ({invoice:p.assistInvoice,expense:p.assistExpense,cancelRdv:p.assistCancelRdv,quote:p.assistQuote,refund:false,catalogEdit:false,finance:false,settings:false,audit:false,reports:false,stock:false,validateExpense:false,closeOthers:false})[perm]??false }
 function log(action,detail){S.audit.unshift({id:uid('LOG'),at:TODAY+' '+hm(nowMin()),user:ui.user.id,action,detail})}
@@ -587,18 +596,22 @@ let toastT;function toast(msg,err){ui.toast={msg,err};clearTimeout(toastT);toast
 /* Modules activables : l'agenda est masqué pour l'instant (données et synchronisation conservées) */
 const FEATURES={agenda:false};
 const NAV=[
- {id:'dashboard',label:'Tableau de bord',icon:'grid'},
+ {group:'Caisse'},
  {id:'pos',label:'Caisse POS',icon:'cart'},
+ {id:'caisse',label:'Ouverture et clôture',icon:'wallet'},
  {id:'ventes',label:'Ventes',icon:'list'},
- {id:'agenda',label:'Agenda',icon:'cal'},
- {id:'clients',label:'Clients',icon:'users'},
  {id:'avances',label:'Avances clients',icon:'coins'},
- {group:'Gestion'},
- {id:'catalogue',label:'Catalogue',icon:'leaf'},
+ {group:'Dépenses'},
+ {id:'depenses',label:'Dépenses',icon:'file'},
+ {group:'Clients'},
+ {id:'clients',label:'Clients',icon:'users'},
  {id:'documents',label:'Devis et factures',icon:'file'},
- {id:'caisse',label:'Caisse et dépenses',icon:'wallet'},
+ {id:'agenda',label:'Agenda',icon:'cal'},
  {group:'Pilotage'},
+ {id:'dashboard',label:'Tableau de bord',icon:'grid'},
  {id:'rapports',label:'Rapports',icon:'chart',admin:true},
+ {group:'Réglages'},
+ {id:'catalogue',label:'Catalogue',icon:'leaf'},
  {id:'parametres',label:'Paramètres',icon:'cog',admin:true},
  {id:'journal',label:'Journal d\'audit',icon:'shield',admin:true},
 ];
@@ -634,7 +647,7 @@ function viewLogin(){const r=ui.login.role;return `
 </div>`}
 
 function shell(content){
- const items=(isAdmin()?NAV:[{id:'pos',label:'Caisse POS',icon:'cart'},{id:'clients',label:'Clients',icon:'users'},{id:'agenda',label:'Agenda',icon:'cal'}]).filter(n=>FEATURES.agenda||n.id!=='agenda').map(n=>{ if(n.group) return `<div class="nav-group">${n.group}</div>`;
+ const vis=NAV.filter(n=>n.group||canView(n.id));const items=vis.filter((n,i)=>!n.group||(vis[i+1]&&!vis[i+1].group)).map(n=>{ if(n.group) return `<div class="nav-group">${n.group}</div>`;
   return `<button class="nav ${ui.view===n.id?'on':''}" data-a="go" data-v="${n.id}">${ic(n.icon)}${n.label}</button>` }).join('');
  const cur=NAV.find(n=>n.id===ui.view)||{};
  return `<div class="shell">
@@ -655,8 +668,20 @@ function shell(content){
    ${ui.view!=='pos'?`<button class="btn primary sm" data-a="go" data-v="pos">${ic('plus')}Nouvelle vente</button>`:''}
   </div>
   ${Store.PROD?'':`<div class="demo-band"><b>Démo v${APP_VERSION}</b> Catalogue et dépenses 2026 réels ; clients, ventes et agenda fictifs. Tout est conservé en mémoire jusqu'au rechargement. Droits appliqués dans l'interface uniquement ; la vérification côté serveur et base de données arrive en phase 3. <a href="#" data-a="modal" data-m="simulated">Ce qui est simulé</a></div>`}
+  ${topSummary()}
   <div class="content">${content}</div>
  </div></div>`}
+/* Synthèse en haut de chaque écran : période courte, chiffres clés, alertes */
+function topSummary(){
+ const P=ui.top.p;const r=periodAt(P,TODAY);
+ const sales=liveSales().filter(x=>inRange(x.date,r));
+ const enc=encIn(r);const dep=S.expenses.filter(e=>inRange(e.date,r)&&e.status!=='rejetée').reduce((a,e)=>a+e.amount,0);
+ const al=buildAlerts();const crit=al.filter(a=>a[0]==='crit').length;
+ const it=(l,v,c='')=>`<div class="ts-it"><span>${l}</span><b class="num" ${c?`style="color:${c}"`:''}>${v}</b></div>`;
+ const occ=FEATURES.agenda?(()=>{const days=[];for(let d=r.from;d<=r.to;d=addDays(d,1))days.push(d);const mins=S.bookings.filter(b=>inRange(b.date,r)&&b.serviceId&&!['annulé','externe'].includes(b.status)).reduce((a,b)=>a+b.dur,0);return pct(mins,days.length*STAFF.length*11*60).toLocaleString('fr-FR')+' %'})():null;
+ return `<div class="topsum"><div class="chips" role="group" aria-label="Période de la synthèse">${[['jour','Jour'],['semaine','Semaine'],['mois','Mois']].map(([k,l])=>`<button class="chip ${P===k?'on':''}" data-a="topper" data-p="${k}">${l}</button>`).join('')}</div>
+  ${isAdmin()?it('Chiffre d\'affaires HT',fmtM(sumLines(linesIn(r))))+it('Encaissé',fmtM(enc))+it('Dépenses',fmtM(dep))+it('Solde',fmtM(enc-dep),enc-dep<0?'var(--crit)':'')+(occ?it('Occupation',occ):''):it('Ventes',sales.length)+it('Tiroir',S.cash?fmtM(cashTheo(S.cash)):'fermé')}
+  <button class="ts-al ${crit?'crit':al.length?'warn':''}" data-a="modal" data-m="alerts">${al.length?al.length+' alerte'+(al.length>1?'s':''):'Aucune alerte'}</button></div>`}
 
 /* --- Tableau de bord --- */
 function viewDashboard(){
@@ -745,15 +770,7 @@ function viewDashboard(){
   <p class="note" style="margin-top:10px">Coûts directs renseignés pour ${covered.toLocaleString('fr-FR')} % du chiffre d'affaires de la période. La marge brute utilise les coûts du catalogue ; le résultat estimé utilise le registre des dépenses (loyer, salaires, honoraires, achats…). Les deux ne s'additionnent pas : les honoraires et achats font déjà partie des dépenses. Il s'agit d'estimations de gestion, pas d'un résultat comptable.</p></div>`:'';
  const top5=(kind)=>{const m={};cur.filter(l=>l.kind===kind).forEach(l=>{m[l.name]=m[l.name]||{q:0,v:0};m[l.name].q+=l.qty;m[l.name].v+=lineHT(l)});const arr=Object.entries(m).sort((a,b)=>b[1].q-a[1].q).slice(0,5);const mx=arr[0]?arr[0][1].q:1;
   return arr.length?arr.map(([n,o])=>`<div class="it"><div class="spread"><span>${esc(n)}</span><span class="num muted">${o.q}${isAdmin()?' · '+fmtM(o.v):''}</span></div><div class="bar ${kind==='P'?'terra':''}"><i style="width:${o.q/mx*100}%"></i></div></div>`).join(''):'<p class="note">Aucune vente sur la période.</p>'};
- const alerts=[];
- const noPrice=S.products.filter(p=>p.price===0);if(noPrice.length)alerts.push(['info',`<b>Herboristerie à compléter</b> · prix et stock manquants pour ${noPrice.map(p=>esc(p.name)).join(', ')}`]);
- S.advances.filter(a=>advBal(a)>0&&a.expected&&a.expected<TODAY).forEach(a=>alerts.push(['warn',`<b>Avance non utilisée</b> · ${esc(cname(a.clientId))}, ${a.no} : ${fmtM(advBal(a))} (prévue le ${fmtD(a.expected)})`]));
- S.products.filter(p=>p.price>0).forEach(p=>{ if(p.stock<=0) alerts.push(['crit',`<b>Rupture</b> · ${esc(p.name)}`]); else if(p.stock<=p.thr) alerts.push(['warn',`<b>Stock faible</b> · ${esc(p.name)} : ${p.stock} restants (seuil ${p.thr})`]);
-  if(p.expiry&&p.expiry<=addDays(TODAY,30)) alerts.push(['warn',`<b>Péremption proche</b> · ${esc(p.name)}, lot ${p.lot} : ${fmtD(p.expiry)}`]) });
- S.memberships.forEach(m=>{ if(m.end<=addDays(TODAY,7)) alerts.push(['info',`<b>Abonnement</b> · ${esc(cname(m.clientId))} : ${esc(svc(m.serviceId).name)} expire le ${fmtD(m.end)} (${memberLeft(m)} séance${memberLeft(m)>1?'s':''} restante${memberLeft(m)>1?'s':''})`]) });
- openAdvances().filter(s=>s.dueDate&&s.dueDate<=addDays(TODAY,2)).forEach(s=>alerts.push([s.dueDate<TODAY?'crit':'warn',`<b>Solde d'avance ${s.dueDate<TODAY?'en retard':'attendu'}</b> · ${esc(cname(s.clientId))}, ${s.no} : ${fmtM(s.total-paidFor(s.id))} au ${fmtD(s.dueDate)}`]));
- const lateInv=S.invoices.filter(i=>invStatus(i)==='en retard');
- if(isAdmin()&&lateInv.length) alerts.unshift(['crit',`<b>${lateInv.length} facture${lateInv.length>1?'s':''} en retard</b> · ${lateInv.map(i=>i.no).join(', ')}`]);
+ const alerts=buildAlerts();
  const ops=`<div class="kpis">
   ${!FEATURES.agenda?'':kpi('',D===TODAY?'Rendez-vous du jour':'Rendez-vous du '+fmtD(D),activeB.length,todayB.filter(b=>b.status==='honoré').length+' honorés · '+todayB.filter(b=>b.status==='absent').length+' absence','ops')}
   ${!FEATURES.agenda?'':kpi('','Taux d\'occupation',occ.toLocaleString('fr-FR')+' %',(D===TODAY?'Aujourd\'hui':'Le '+fmtD(D))+' · minutes réservées / '+STAFF.length+' intervenants × 11 h','ops')}
@@ -785,6 +802,20 @@ function viewDashboard(){
   </div>
  </div>`;
 }
+function buildAlerts(){
+ const alerts=[];
+ const noPrice=S.products.filter(p=>p.price===0);if(noPrice.length)alerts.push(['info',`<b>Herboristerie à compléter</b> · prix et stock manquants pour ${noPrice.map(p=>esc(p.name)).join(', ')}`]);
+ S.advances.filter(a=>advBal(a)>0&&a.expected&&a.expected<TODAY).forEach(a=>alerts.push(['warn',`<b>Avance non utilisée</b> · ${esc(cname(a.clientId))}, ${a.no} : ${fmtM(advBal(a))} (prévue le ${fmtD(a.expected)})`]));
+ S.products.filter(p=>p.price>0).forEach(p=>{ if(p.stock<=0) alerts.push(['crit',`<b>Rupture</b> · ${esc(p.name)}`]); else if(p.stock<=p.thr) alerts.push(['warn',`<b>Stock faible</b> · ${esc(p.name)} : ${p.stock} restants (seuil ${p.thr})`]);
+  if(p.expiry&&p.expiry<=addDays(TODAY,30)) alerts.push(['warn',`<b>Péremption proche</b> · ${esc(p.name)}, lot ${p.lot} : ${fmtD(p.expiry)}`]) });
+ S.memberships.forEach(m=>{ if(!m.cancelled&&m.end<=addDays(TODAY,7)&&m.end>=addDays(TODAY,-15)) alerts.push(['info',`<b>Abonnement</b> · ${esc(cname(m.clientId))} : ${esc(svc(m.serviceId).name)} expire le ${fmtD(m.end)} (${memberLeft(m)} séance${memberLeft(m)>1?'s':''} restante${memberLeft(m)>1?'s':''})`]) });
+ openAdvances().filter(s=>s.dueDate&&s.dueDate<=addDays(TODAY,2)).forEach(s=>alerts.push([s.dueDate<TODAY?'crit':'warn',`<b>Solde d'avance ${s.dueDate<TODAY?'en retard':'attendu'}</b> · ${esc(cname(s.clientId))}, ${s.no} : ${fmtM(s.total-paidFor(s.id))} au ${fmtD(s.dueDate)}`]));
+ const lateInv=S.invoices.filter(i=>invStatus(i)==='en retard');
+ if(isAdmin()&&lateInv.length) alerts.unshift(['crit',`<b>${lateInv.length} facture${lateInv.length>1?'s':''} en retard</b> · ${lateInv.map(i=>i.no).join(', ')}`]);
+ if(!S.cash) alerts.unshift(['warn','<b>Caisse fermée</b> · ouvrez-la avant la première vente en espèces']);
+ else if(S.cash.opened<TODAY) alerts.unshift(['crit',`<b>Caisse du ${fmtD(S.cash.opened)} non clôturée</b> · clôturez-la puis rouvrez-la pour aujourd'hui`]);
+ else if(nowMin()>=19*60) alerts.push(['info','<b>Fin de journée</b> · pensez à clôturer la caisse']);
+ return alerts}
 function niceStep(max){const raw=max/4;const p=Math.pow(10,Math.floor(Math.log10(raw)));const n=raw/p;return (n<=1?1:n<=2?2:n<=5?5:10)*p}
 
 /* --- Caisse POS --- */
@@ -825,7 +856,10 @@ function viewPOS(){
   ${daySales.length?`<div class="tbl-wrap"><table><thead><tr><th>Heure</th><th>Ticket</th><th>Client</th><th>Articles</th><th>Règlement</th><th class="r">Total TTC</th><th>Statut</th></tr></thead><tbody>${daySales.map(x=>{const pd=paidFor(x.id);const ms=[...new Set(S.payments.filter(p=>p.saleId===x.id&&p.amount>0).map(p=>p.method))].join(', ')||'—';
    const st=x.status==='annulée'?'<span class="pill p-neutral">Annulée</span>':pd>=x.total?'<span class="pill p-good">Payée</span>':pd>0?'<span class="pill p-warn">Acompte</span>':'<span class="pill p-crit">Non payée</span>';
    return `<tr class="click" data-a="viewsale" data-id="${x.id}" ${x.status==='annulée'?'style="opacity:.6"':''}><td class="num nw">${esc(x.time||'')}</td><td class="num nw">${esc(x.no)}</td><td>${esc(cname(x.clientId))}</td><td>${esc(x.lines.map(l=>(l.qty>1?l.qty+' × ':'')+l.name).join(', '))}</td><td>${esc(ms)}</td><td class="r num nw">${fmtM(x.total)}</td><td>${st}${invoiceOf(x.id)?' <span class="pill p-sage">Facturée</span>':''}</td></tr>`}).join('')}</tbody></table></div>`:'<p class="note">Aucune vente aujourd\'hui pour le moment.</p>'}</div>`;
- return `
+ const banner=!S.cash?`<div class="cash-banner closed"><div><b>La caisse est fermée</b><div class="note">Comptez le fonds de caisse et ouvrez la caisse pour commencer la journée.</div></div><button class="btn primary" data-a="modal" data-m="openCash">Ouvrir la caisse</button></div>`
+  :S.cash.opened<TODAY?`<div class="cash-banner late"><div><b>La caisse du ${fmtD(S.cash.opened)} n'a pas été clôturée</b><div class="note">Clôturez-la (comptage du tiroir), puis ouvrez la caisse du jour.</div></div><button class="btn terra" data-a="modal" data-m="closeCash">Clôturer</button></div>`
+  :nowMin()>=19*60?`<div class="cash-banner eod"><div><b>Fin de journée</b><div class="note">Pensez à clôturer la caisse : comptage du tiroir et rapport Z.</div></div><button class="btn terra" data-a="modal" data-m="closeCash">Clôturer la caisse</button></div>`:'';
+ return `${banner}
  <div class="pos">
   <div class="pos-left">
    <div class="card" style="display:grid;gap:12px">
@@ -1020,8 +1054,36 @@ function viewCaisse(){
  <div class="spread grand" style="font-size:16px"><span>Résultat opérationnel estimatif</span><span class="num">${fmtM(gm-depOps)}</span></div></div>
  <div class="totals">${row('Encaissements TTC',enc,'Argent reçu, avances comprises, TVA comprise')}${row('Avances clients à valoir',S.advances.reduce((x,a)=>x+advBal(a),0),'Reçues mais pas encore consommées : à servir en prestations')}${row('TVA collectée',ls.reduce((a,l)=>a+lineTVA(l),0),'À reverser, sur les ventes du mois')}${row('Dépenses payées',dep,'Toutes catégories')}${row('Créances clients',cre,'À date, toutes périodes')}${row('Dettes fournisseurs',0,'Module non activé')}
  <div class="alert info" style="margin-top:8px"><span>Ces chiffres sont des indicateurs de gestion. Ils ne remplacent pas un résultat comptable certifié par votre expert-comptable.</span></div></div></div></div>`}
- return `<div class="head"><div><h1>Caisse et dépenses</h1><p>Chaque mouvement porte un identifiant unique, un auteur et un motif. Les dépenses de janvier à octobre 2026 viennent de votre fichier de suivi des charges.</p></div></div>${session}${moves}${finance}${charges}${expTbl}${isAdmin()?hist:''}`;
+ if(ui.view==='depenses')return `<div class="head"><div><h1>Dépenses</h1><p>Registre des dépenses : chaque ligne porte un numéro, un auteur et son justificatif.</p></div></div>${expTbl}${charges}${finance}`;
+ return `<div class="head"><div><h1>Ouverture et clôture de caisse</h1><p>Fonds de caisse, mouvements du tiroir et clôture avec comptage${isAdmin()?', récapitulatif des mouvements par période':''}.</p></div></div>${session}${moves}${isAdmin()?cashRecap():''}${isAdmin()?hist:''}`;
 }
+/* Récapitulatif des mouvements de caisse, jour par jour, sur une période */
+function cashRecapRange(){const C=ui.cr;if(C.p==='periode'){let f=C.from||TODAY,t=C.to||TODAY;if(f>t)[f,t]=[t,f];return{from:f,to:t>TODAY?TODAY:t,label:'Du '+fmtD(f)+' au '+fmtD(t)}}return periodAt(C.p,C.ref)}
+function cashRecapRows(r){const rows=[];
+ for(let d=r.from;d<=r.to;d=addDays(d,1)){
+  const sales=liveSales().filter(x=>x.date===d);const pays=S.payments.filter(p=>p.date===d&&p.method!==ADV);
+  const m=k=>pays.filter(p=>p.method===k&&p.amount>0).reduce((a,p)=>a+p.amount,0)+S.advances.filter(a=>a.date===d&&a.method===k).reduce((x,a)=>x+a.amount,0);
+  const adv=S.advances.filter(a=>a.date===d).reduce((x,a)=>x+a.amount,0);
+  const ref=-pays.filter(p=>p.amount<0).reduce((a,p)=>a+p.amount,0)+S.advances.reduce((x,a)=>x+a.refunds.filter(f=>f.date===d).reduce((y,f)=>y+f.amount,0),0);
+  const dep=S.expenses.filter(e=>e.date===d&&e.status!=='rejetée').reduce((a,e)=>a+e.amount,0);
+  const ses=(S.cashSessions||[]).filter(c=>c.opened===d&&c.closing);const hist=!ses.length?(S.cashHistory||[]).filter(h=>h.opened===d):[];
+  const gap=ses.length?ses.reduce((a,c)=>a+c.closing.gap,0):hist.length?hist.reduce((a,h)=>a+h.gap,0):null;
+  const row={d,n:sales.length,ttc:sales.reduce((a,x)=>a+x.total,0),esp:m('Espèces'),carte:m('Carte'),vir:m('Virement'),chq:m('Chèque'),adv,ref,dep,gap,closed:ses.length+hist.length>0};
+  row.enc=row.esp+row.carte+row.vir+row.chq-row.ref;
+  if(row.n||row.enc||row.dep||row.ref||row.closed)rows.push(row)}
+ return rows}
+function cashRecapTable(rows){const t=k=>rows.reduce((a,r)=>a+(r[k]||0),0);const g=rows.filter(r=>r.gap!==null);
+ const cells=r=>`<td class="r num">${r.n}</td><td class="r num nw">${fmtM(r.ttc)}</td><td class="r num nw">${fmtM(r.esp)}</td><td class="r num nw">${fmtM(r.carte)}</td><td class="r num nw">${fmtM(r.vir+r.chq)}</td><td class="r num nw">${r.ref?'− '+fmtM(r.ref):'—'}</td><td class="r num nw"><b>${fmtM(r.enc)}</b></td><td class="r num nw">${fmtM(r.dep)}</td>`;
+ return `<div class="tbl-wrap"><table><thead><tr><th>Jour</th><th class="r">Ventes</th><th class="r">Total TTC</th><th class="r">Espèces</th><th class="r">Carte</th><th class="r">Virement · chèque</th><th class="r">Rembours.</th><th class="r">Encaissé</th><th class="r">Dépenses</th><th class="r">Écart caisse</th></tr></thead><tbody>
+ ${rows.map(r=>`<tr><td class="nw" style="text-transform:capitalize">${JOURS[dow(r.d)].slice(0,3)}. ${fmtD(r.d)}</td>${cells(r)}<td class="r num nw" style="color:${r.gap?'var(--crit)':'inherit'}">${r.gap===null?'<span class="muted">non clôturée</span>':fmtM(r.gap)}</td></tr>`).join('')||'<tr><td colspan="10" class="note">Aucun mouvement sur la période.</td></tr>'}
+ ${rows.length?`<tr style="font-weight:700"><td>Total</td>${cells({n:t('n'),ttc:t('ttc'),esp:t('esp'),carte:t('carte'),vir:t('vir'),chq:t('chq'),ref:t('ref'),enc:t('enc'),dep:t('dep')})}<td class="r num nw">${g.length?fmtM(g.reduce((a,r)=>a+r.gap,0)):'—'}</td></tr>`:''}</tbody></table></div>`}
+function cashRecap(){const C=ui.cr;const r=cashRecapRange();const rows=cashRecapRows(r);const enc=rows.reduce((a,x)=>a+x.enc,0),dep=rows.reduce((a,x)=>a+x.dep,0);
+ return `<div class="card"><div class="card-h"><div><h2>Récapitulatif des mouvements</h2><div class="note" style="text-transform:none">${esc(r.label)} · encaissé ${fmtM(enc)} · dépenses ${fmtM(dep)} · solde <b class="num">${fmtM(enc-dep)}</b></div></div><button class="btn" data-a="printCashRecap">${ic('file')}Imprimer</button></div>
+ <div class="row" style="margin-bottom:12px"><div class="chips" role="group" aria-label="Période">${[['jour','Jour'],['semaine','Semaine'],['mois','Mois'],['periode','Période']].map(([k,l])=>`<button class="chip ${C.p===k?'on':''}" data-a="crper" data-p="${k}">${l}</button>`).join('')}</div>
+ ${C.p==='periode'?`<label class="note" for="cr-from">Du</label><input class="input" type="date" id="cr-from" data-in="crfrom" value="${C.from}" max="${TODAY}" style="width:auto"><label class="note" for="cr-to">au</label><input class="input" type="date" id="cr-to" data-in="crto" value="${C.to}" max="${TODAY}" style="width:auto">`:`<button class="btn sm" data-a="crshift" data-n="-1" aria-label="Période précédente">‹</button><button class="btn sm" data-a="crshift" data-n="1" aria-label="Période suivante" ${r.to>=TODAY?'disabled':''}>›</button>`}</div>
+ ${cashRecapTable(rows)}<p class="note" style="margin-top:8px">Encaissé = espèces + carte + virement + chèque (avances comprises) − remboursements. Les montants déduits d'une avance ne sont pas comptés deux fois.</p></div>`}
+function cashRecapPrint(){const r=cashRecapRange();const rows=cashRecapRows(r);const st=S.settings;
+ return `<div class="paper"><div class="spread" style="align-items:flex-start;margin-bottom:12px"><div><h2>KAYANI</h2><div style="font-size:12px">${esc(st.name)}</div></div><div style="text-align:right"><div style="font-weight:700;letter-spacing:.08em;text-transform:uppercase">Mouvements de caisse</div><div>${esc(r.label)}</div><div style="font-size:11px">Édité le ${fmtD(TODAY)} à ${hm(nowMin())} par ${esc(ui.user.name)}</div></div></div>${cashRecapTable(rows)}</div>`}
 
 /* --- Journal des ventes --- */
 function viewVentes(){
@@ -1233,6 +1295,7 @@ function viewModal(){
   </div></div>`;
   return modalWrap(m.view?'Ticket '+esc(s.no):restR>0?'Vente avec avance enregistrée':'Vente enregistrée',`${m.view?(s.seller?`<div class="note">Vendu par ${esc(s.seller)}${s.note?' · '+esc(s.note):''}</div>`:''):`<div class="alert info"><span>Stock mis à jour, ${pays.length} paiement${pays.length>1?'s':''} enregistré${pays.length>1?'s':''}${pays.some(p=>p.method==='Espèces')?', mouvement de caisse créé':''}.${m.change>0?` <b>Monnaie à rendre : ${fmtM(m.change)}</b>`:''}</span></div>`}
   ${off?`<div class="alert crit"><span><b>Vente annulée</b>${s.cancel?` le ${fmtD(s.cancel.date)} à ${s.cancel.time} par ${esc(userName(s.cancel.user))} · motif : ${esc(s.cancel.reason)}${s.cancel.refund?` · remboursé ${fmtM(s.cancel.refund)} (${esc(s.cancel.method)})`:''}${s.cancel.advance?` · ${fmtM(s.cancel.advance)} recrédités sur l'avance`:''}`:''}.</span></div>`:choice}<div class="tk-prev">${ticketHTML(s,m.change||0)}</div>`,`${!off?`<button class="btn danger" data-a="modal" data-m="cancelSale" data-id="${s.id}" ${can('refund')?'':'disabled title="Réservé à l\'administrateur"'}>Annuler la vente</button>`:off&&m.view?`<button class="btn" data-a="printTicket" data-id="${s.id}">Imprimer</button>`:''}${m.view&&restR>0&&s.clientId?`<button class="btn" data-a="modal" data-m="paySale" data-id="${s.id}">Encaisser le solde</button>`:''}<button class="btn ${m.view?'primary':''}" data-a="closeModal">${m.view?'Fermer':'Nouvelle vente'}</button>`,true)}
+ if(m.type==='alerts'){const al=buildAlerts();return modalWrap('Alertes',`<div style="display:grid;gap:8px">${al.map(a=>`<div class="alert ${a[0]}"><span>${a[1]}</span></div>`).join('')||'<p class="note">Aucune alerte pour le moment.</p>'}</div>`,`<button class="btn primary" data-a="closeModal">Fermer</button>`)}
  if(m.type==='useSession'){const ms=S.memberships.find(x=>x.id===m.id);if(!ms)return'';const f=svc(ms.serviceId);
   return modalWrap('Utiliser une séance',`<div class="totals"><div class="spread"><span class="muted">Client</span><b>${esc(cname(ms.clientId))}</b></div><div class="spread"><span class="muted">Formule</span><span>${esc(f.name)}</span></div><div class="spread"><span class="muted">Séances</span><span class="num">${ms.used} utilisée${ms.used>1?'s':''} sur ${ms.included} · valable jusqu'au ${fmtD(ms.end)}</span></div></div><div class="note">Après validation : ${memberLeft(ms)-1} séance${memberLeft(ms)-1>1?'s':''} restante${memberLeft(ms)-1>1?'s':''}. Aucun paiement n'est demandé, la séance est déjà payée par le forfait.</div><div id="us-err"></div>`,
   `<button class="btn" data-a="closeModal">Annuler</button><button class="btn primary" data-a="doUseSession" data-id="${ms.id}" data-key="${uid('k')}">Décompter la séance</button>`)}
@@ -1347,7 +1410,7 @@ function viewModal(){
 }
 
 /* ---------- Rendu ---------- */
-const VIEWS={dashboard:viewDashboard,pos:viewPOS,ventes:viewVentes,avances:viewAvances,catalogue:viewCatalogue,clients:viewClients,documents:viewDocuments,caisse:viewCaisse,agenda:viewAgenda,rapports:viewRapports,parametres:viewParametres,journal:viewJournal};
+const VIEWS={dashboard:viewDashboard,pos:viewPOS,ventes:viewVentes,avances:viewAvances,catalogue:viewCatalogue,clients:viewClients,documents:viewDocuments,caisse:viewCaisse,depenses:viewCaisse,agenda:viewAgenda,rapports:viewRapports,parametres:viewParametres,journal:viewJournal};
 function render(){
  const ae=document.activeElement;const fid=ae&&ae.id;let ss=null,se=null;try{ss=ae.selectionStart;se=ae.selectionEnd}catch(e){}
  const app=document.getElementById('app');
@@ -1420,6 +1483,10 @@ const A={
  denied:d=>toast(`« ${d.label} » est réservé à l'administrateur ou nécessite une permission.`,true),
  modal:d=>{ui.modal={type:d.m,id:d.id,from:d.from,view:d.view==='1'};render()},
  closeModal:()=>{ui.modal=null;render()},
+ topper:d=>{ui.top.p=d.p;render()},
+ crper:d=>{ui.cr.p=d.p;if(d.p==='periode'&&!ui.cr.from){ui.cr.from=addDays(TODAY,-6);ui.cr.to=TODAY}render()},
+ crshift:d=>{ui.cr.ref=shiftRef(ui.cr.p,ui.cr.ref,+d.n);if(ui.cr.ref>TODAY)ui.cr.ref=TODAY;render()},
+ printCashRecap:()=>{printHTML(cashRecapPrint(),'a4')},
  quickpay:d=>{const P=ui.pos;if(!P.cart.length||P.busy)return;const T=posTotals();
   if(d.m==='Espèces'){if(!S.cash){toast('Ouvrez la caisse avant d\'encaisser des espèces.',true);return}P.cashMode=true;P.tendered='';render();setTimeout(()=>{const el=document.getElementById('pos-tender');if(el)el.focus()},30);return}
   if(T.rest<=0){A.validate();return}
@@ -1641,6 +1708,7 @@ const INPUT={
  catq:v=>{ui.cat.q=v},salesq:v=>{ui.sales.q=v;ui.sales.page=1},salesmonth:v=>{ui.sales.month=v;ui.sales.page=1},advq:v=>{ui.adv.q=v},expmonth:v=>{ui.exp.month=v},nasvc:(v)=>{const el=document.getElementById('na-purpose');const am=document.getElementById('na-amount');if(v&&el&&!el.value)el.value=svc(v).name;if(v&&am&&!am.value)am.value=toInput(svc(v).price);return false},cliq:v=>{ui.cli.q=v;ui.cli.page=1},docsq:v=>{ui.docs.q=v},expq:v=>{ui.exp.q=v},
  fcat:v=>{ui.fcat=v},fuser:v=>{ui.fuser=v},
  postender:v=>{ui.pos.tendered=v},
+ crfrom:v=>{ui.cr.from=v},crto:v=>{ui.cr.to=v},
  fref:v=>{if(/^\d{4}-\d{2}-\d{2}$/.test(v)){ui.ref=v>TODAY?TODAY:v;return}return false},
  set:(v,el)=>{S.settings[el.dataset.k]=v;return false},
  tva:(v,el)=>{S.settings.tva[el.dataset.k]=v;return false},
@@ -1665,7 +1733,7 @@ document.addEventListener('keydown',e=>{
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&ui.modal){ui.modal=null;render()}if((e.key==='Enter'||e.key===' ')&&e.target.matches('.ag-ev')){e.preventDefault();e.target.click()}});
 document.addEventListener('input',e=>{const k=e.target.dataset&&e.target.dataset.in;if(!k||!INPUT[k])return;const r=INPUT[k](e.target.value,e.target);if(r!==false)render()});
 document.addEventListener('change',e=>{const k=e.target.dataset&&e.target.dataset.in;if(k&&['set','tva','disc-max'].includes(k))log('Paramètre modifié',k+(e.target.dataset.k?' · '+e.target.dataset.k:''))});
-document.addEventListener('submit',e=>{if(e.target.id==='login-form'&&Store.PROD){e.preventDefault();doLogin();return}if(e.target.id==='login-form'){e.preventDefault();ui.user=USERS[ui.login.role];ui.view=ui.user.role==='admin'?'dashboard':'pos';ui.pos.method='Espèces';log('Connexion','Session ouverte (simulée)');render()}});
+document.addEventListener('submit',e=>{if(e.target.id==='login-form'&&Store.PROD){e.preventDefault();doLogin();return}if(e.target.id==='login-form'){e.preventDefault();ui.user=USERS[ui.login.role];ui.view='pos';ui.pos.method='Espèces';log('Connexion','Session ouverte (simulée)');render()}});
 function renderStatus(){const el=document.getElementById('sync-pill');if(!el)return;const st=Store.state;
  const cls=st.syncing?'busy':!navigator.onLine?'off':st.error?'err':'';
  const t=st.syncing?'Synchronisation…':!navigator.onLine?`Hors ligne${st.pending?' · '+st.pending+' en attente':''}`:st.error?'Erreur de synchro':st.pending?st.pending+' en attente':st.lastSync?'À jour '+st.lastSync.toLocaleTimeString('fr-FR',{hour:'2-digit',minute:'2-digit'}):'Connexion…';
@@ -1684,7 +1752,7 @@ document.addEventListener('focusout',()=>{if(deferred&&!ui.modal){deferred=false
 const _closeModal=A.closeModal;A.closeModal=()=>{_closeModal();if(deferred){deferred=false;render()}};
 async function enter(p){
  ui.user={id:p.id,name:p.name,short:(p.name||p.email).split(/[\s.@]+/).filter(Boolean).slice(0,2).map(x=>x[0].toUpperCase()).join(''),role:p.role,email:p.email};
- ui.view=p.role==='admin'?'dashboard':'pos';
+ ui.view='pos';
  document.getElementById('app').innerHTML='<div class="splash"><div style="text-align:center"><img src="'+LOGO+'" alt="" style="width:96px;border-radius:50%"><p>Chargement des données…</p></div></div>';
  await Store.start(S);render();
 }
