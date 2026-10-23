@@ -3,7 +3,7 @@
 Caisse, clients, agenda et gestion du centre de bien-être **KAYANI**.
 Application web installable (PWA) : elle s'installe sur PC, iPhone et iPad, fonctionne **hors ligne** et se **synchronise** avec Supabase dès que la connexion revient.
 
-Version 3.0, 23/10/2026.
+Version 3.1, 23/10/2026.
 
 ---
 
@@ -99,6 +99,15 @@ node supabase/functions/gcal-sync/test/sync.test.mjs
 node supabase/functions/gcal-sync/test/handler.test.mjs
 ```
 
+### 6. Version 3 : photos des justificatifs, clubs, équipe, crédits (une seule fois)
+
+1. Supabase › **SQL Editor** › New query.
+2. Coller tout le contenu de [`supabase/v3.sql`](supabase/v3.sql) › **Run**.
+
+Cela crée l'espace privé **justificatifs** (photos et scans des factures, ouverts uniquement par l'administration avec un lien temporaire) et ouvre à l'assistante la collection des feuilles de présence des clubs. Les crédits et les données de l'équipe restent réservés à l'administration.
+
+Tant que ce script n'est pas exécuté, l'application fonctionne, mais l'envoi d'une photo de facture affiche « espace justificatifs à créer ».
+
 ---
 
 ## Installer l'application sur les appareils
@@ -131,6 +140,7 @@ supabase.js           client Supabase (embarqué pour le hors ligne)
 fonts.css             polices Figtree et Marcellus (intégrées)
 *.png                 icônes de l'application
 supabase/schema.sql   (facultatif sur le site) tables, droits RLS, numérotation légale
+supabase/v3.sql       (facultatif sur le site) justificatifs, droits des nouvelles collections
 supabase/gcal.sql     (facultatif sur le site) synchronisation Google Agenda : état privé, déclencheur, tâche planifiée
 supabase/functions/gcal-sync/  fonction de synchronisation Google Agenda et ses tests
 scripts/              (facultatif sur le site) outils de construction
