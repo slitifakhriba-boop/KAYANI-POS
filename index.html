@@ -162,6 +162,37 @@ a.btn{text-decoration:none}
 .att-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px}
 .att{display:flex;gap:10px;align-items:center;padding:10px 12px;border:1px solid var(--line);border-radius:10px;cursor:pointer;background:var(--surface)}
 .att.on,.att:has(input:checked){background:var(--good-tint);border-color:var(--good)}.att input{width:18px;height:18px;accent-color:var(--good)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:16px 0 12px}
+.pos2{display:grid;grid-template-columns:minmax(320px,400px) minmax(0,1fr);gap:16px;align-items:start;margin-bottom:16px}
+.ticket{position:sticky;top:12px;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;min-height:560px;max-height:calc(100vh - 120px);overflow:hidden}
+.ticket.back{border:2px solid var(--warn)}
+.tk-head{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 14px;border-bottom:1px solid var(--line)}
+.tk-title{font-family:var(--f-display);font-size:19px;letter-spacing:.06em;text-transform:uppercase}
+.tk-date{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding:8px 14px;border-bottom:1px solid var(--line);font-size:12.5px;color:var(--muted)}.tk-date .input{width:auto;padding:5px 8px}
+.tk-back{background:var(--warn-tint);color:var(--warn);font-size:12.5px;font-weight:600;padding:8px 14px}
+.ticket .parked,.ticket>.alert{margin:8px 14px 0}
+.tk-lines{flex:1;overflow:auto;min-height:140px}
+.tk-line{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;padding:10px 14px;border-bottom:1px dashed var(--line);border-left:4px solid var(--vc,var(--line));cursor:pointer}
+.tk-line.sel{background:var(--sage-tint)}.tk-line:hover{background:var(--sand)}
+.tk-n{display:grid;gap:2px;min-width:0}.tk-n b{font-weight:600}.tk-r{display:grid;justify-items:end;gap:4px}.tk-r .num{font-weight:600}
+.tk-line .qty button{width:26px;height:24px}
+.tk-empty{display:grid;gap:8px;place-items:center;text-align:center;padding:40px 24px;color:var(--muted)}.tk-empty b{font-family:var(--f-display);font-size:18px;color:var(--ink);letter-spacing:.06em;text-transform:uppercase}
+.tk-note{padding:6px 14px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line)}
+.tk-foot{display:grid;gap:10px;padding:12px 14px;border-top:1px solid var(--line);background:var(--surface)}
+.tk-total{display:flex;justify-content:space-between;align-items:baseline;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.tk-total b{font-size:34px;letter-spacing:0}
+.tk-actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.tk-act{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:8px 2px;font:inherit;font-size:12.5px;font-weight:600;display:grid;justify-items:center;gap:1px;cursor:pointer;min-height:48px;align-content:center}
+.tk-act small{font-size:10px;color:var(--muted);font-weight:400}.tk-act.danger{color:var(--crit)}.tk-act:disabled{opacity:.45;cursor:not-allowed}.tk-act:not(:disabled):hover{border-color:var(--sage)}
+.btn-pay{width:100%;padding:15px;font:inherit;font-size:20px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--good);color:var(--surface);border:0;border-radius:10px;cursor:pointer}.btn-pay small{font-size:11px;letter-spacing:0;opacity:.8;margin-left:8px}.btn-pay:disabled{opacity:.45;cursor:not-allowed}
+.pos-search{margin-bottom:12px}.pos-search .input{font-size:16px;padding:14px 16px 14px 42px;border:2px solid var(--sage)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.tile{position:relative;min-height:124px;border:0;border-radius:12px;background:var(--vc,var(--sage-deep));color:var(--surface);display:grid;justify-items:center;align-content:center;gap:10px;padding:16px 12px 22px;font:inherit;font-weight:700;font-size:15px;letter-spacing:.05em;text-transform:uppercase;cursor:pointer;text-align:center;box-shadow:0 2px 0 rgba(0,0,0,.08)}
+.tile svg{width:36px;height:36px}.tile .cnt{position:absolute;right:10px;bottom:8px;font-size:12px;font-weight:600;opacity:.85}.tile:hover{filter:brightness(1.08)}
+.tile.all{grid-column:1/-1;min-height:84px;background:var(--sage-deep)}
+.pay-total{display:flex;justify-content:space-between;align-items:baseline}.pay-total b{font-size:30px}
+.pay-quick.big .btn{padding:16px;font-size:16px;justify-content:center}.pay-quick .btn small{font-size:10.5px;opacity:.75;margin-left:4px}
+@media (max-width:1000px){.pos2{grid-template-columns:minmax(0,1fr)}.ticket{position:static;max-height:none;min-height:0}}
+@media (max-width:520px){.tiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.tile{min-height:96px;font-size:13px}.tk-total b{font-size:28px}}
 .topsum{display:flex;flex-wrap:wrap;align-items:center;gap:8px 18px;padding:8px max(16px,env(safe-area-inset-right,0px)) 8px max(22px,env(safe-area-inset-left,0px));background:var(--surface);border-bottom:1px solid var(--line);font-size:13px}
 .topsum .chip{padding:3px 10px;font-size:12px}
 .ts-it{display:flex;flex-direction:column;line-height:1.2}.ts-it span{font-size:11px;color:var(--muted);letter-spacing:.03em}.ts-it b{font-size:14px}
@@ -378,7 +409,7 @@ const ic=(n,cls='')=>`<svg class="${cls}" viewBox="0 0 24 24" fill="none" stroke
 /* ---------- Données de démonstration ---------- */
 const USERS={admin:{id:'u-admin',name:'Direction KAYANI',short:'DK',role:'admin',email:'direction@kayani.tn'},assistant:{id:'u-assist',name:'Assistante accueil',short:'AS',role:'assistant',email:'accueil@kayani.tn'}};
 const LOGO='data:image/jpeg;base64,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';
-const APP_VERSION='3.7.1';const APP_VERSION_DATE='23/10/2026';
+const APP_VERSION='3.8';const APP_VERSION_DATE='26/10/2026';
 const STAFF=[{id:'st1',name:'Praticienne',spec:'Soins du corps'},{id:'st2',name:'Thérapeute',spec:'Thérapie et counseling'},{id:'st3',name:'Animateurs',spec:'Clubs : chant, danse, yoga'}];
 const ROOMS=['Cabine 1','Cabine 2','Salle calme','Studio'];
 const SERVICE_CATS=['Soins du corps','Thérapie','Clubs','Autres prestations'];
@@ -617,7 +648,7 @@ const pill=s=>`<span class="pill ${STAT[s]||'p-neutral'}">${esc(s.charAt(0).toUp
 
 /* ---------- État d'interface ---------- */
 const ui={user:null,view:'pos',top:{p:'jour'},cr:{p:'semaine',ref:TODAY,from:'',to:''},period:'mois',ref:TODAY,fcat:'toutes',fuser:'tous',
- pos:{cashMode:false,tendered:'',detail:false,q:'',cat:'',cart:[],clientId:'',pays:[],method:'Espèces',amount:'',key:null,busy:false,mode:'complet',due:''},
+ pos:{sel:-1,payOpen:false,date:'',time:'12:00',note:'',cashMode:false,tendered:'',detail:false,q:'',cat:'',cart:[],clientId:'',pays:[],method:'Espèces',amount:'',key:null,busy:false,mode:'complet',due:''},
  cat:{tab:'services',q:'',page:1},cli:{q:'',seg:'tous',page:1,tab:'liste',ap:6,sg:'relancer'},club:{sid:'',date:TODAY},team:{tab:'jour',date:TODAY,m:TODAY.slice(0,7),pm:(+TODAY.slice(8,10)<=10?shiftMonth(TODAY,-1):TODAY).slice(0,7)},docs:{tab:'factures',q:''},exp:{q:'',month:'tous',axe:'tous'},adv:{tab:'avances',st:'ouvertes',q:''},sales:{month:TODAY.slice(0,7),q:'',method:'tous',page:1},
  dep:{p:'mois',ref:TODAY,from:'',to:'',miss:'manquant'},compta:{m:(+TODAY.slice(8,10)<=10?shiftMonth(TODAY,-1):TODAY).slice(0,7)},agenda:{date:TODAY,tab:'planning',range:'demain',ap:'mois',typ:''},rep:{type:'ventes',p:'mois',ref:TODAY,from:'',to:''},jr:{p:'semaine',cat:'tous',user:'tous',q:'',lim:100},modal:null,toast:null,nav:false,login:{role:'admin'}};
 const isAdmin=()=>ui.user&&ui.user.role==='admin';
@@ -868,33 +899,33 @@ function niceStep(max){const raw=max/4;const p=Math.pow(10,Math.floor(Math.log10
 
 /* --- Caisse POS --- */
 function posTotals(){const sub=ui.pos.cart.reduce((a,l)=>a+l.unit*l.qty,0);const total=docTotal(ui.pos.cart);const paid=ui.pos.pays.reduce((a,p)=>a+p.amount,0);return{sub,disc:sub-total,total,paid,rest:total-paid}}
+/* --- Caisse POS : ticket à gauche, recherche et catégories à droite --- */
+const posDate=()=>isAdmin()&&ui.pos.date&&ui.pos.date<TODAY?ui.pos.date:TODAY;
+const posBack=()=>posDate()!==TODAY;
+const CAT_ICON={'Soins du corps':'<path d="M12 21c-4-3-7-6-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 4-3 7-7 10z"/><path d="M12 8.5V21"/>','Thérapie':'<circle cx="12" cy="12" r="9"/><path d="M12 7c2 2 2 8 0 10M12 7c-2 2-2 8 0 10M5 12h14"/>','Clubs':'<circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M2 20c0-3 3-5 6-5s6 2 6 5M12 20c0-3 2-5 4-5 3 0 6 2 6 5"/>','Herboristerie':'<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.5 19 2c1 2 2 4.2 2 8 0 5.5-4.8 10-10 10Z"/><path d="M2 21c0-3 1.9-5.4 5.1-6C9.5 14.5 12 13 13 12"/>','Autres prestations':'<circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/>'};
+const catIcon=c=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${CAT_ICON[c]||CAT_ICON['Autres prestations']}</svg>`;
+function posItems(){return [...S.services.filter(s=>s.active).map(s=>({k:'S',id:s.id,code:s.ref||s.id,name:s.name,cat:s.cat,price:s.price,pack:!!s.sessions,pt:priceTxt(s),meta:svcMeta(s)+' · '+staffName(s.staff)})),
+  ...S.products.map(p=>({k:'P',id:p.id,code:p.sku,name:p.name,cat:'Herboristerie',price:p.price,stock:p.stock,pt:p.price?fmtM(p.price):'Prix à renseigner',meta:!p.price?'Non vendable':p.stock>0?'Stock : '+p.stock:'Rupture',sku:p.sku,bar:p.bar}))]}
+function posFind(q){const all=posItems();const t=q.trim().toLowerCase();const norm=x=>String(x||'').toLowerCase().replace(/[\s-]/g,'');
+ const exact=all.filter(i=>norm(i.code)===norm(t)||norm(i.id)===norm(t)||(i.bar&&i.bar===t)||i.name.toLowerCase()===t);if(exact.length)return{hits:exact,exact:true};
+ return{hits:all.filter(i=>i.name.toLowerCase().includes(t)||norm(i.code).includes(norm(t))||(i.bar||'').includes(t)),exact:false}}
 function viewPOS(){
- const P=ui.pos; const q=P.q.trim().toLowerCase();
- const all=[...S.services.filter(s=>s.active).map(s=>({k:'S',id:s.id,name:s.name,cat:s.cat,price:s.price,pack:!!s.sessions,pt:priceTxt(s),meta:svcMeta(s)+' · '+staffName(s.staff)})),
-  ...S.products.map(p=>({k:'P',id:p.id,name:p.name,cat:'Herboristerie',price:p.price,stock:p.stock,pt:p.price?fmtM(p.price):'Prix à renseigner',meta:!p.price?'Non vendable':p.stock>0?'Stock : '+p.stock:'Rupture',sku:p.sku,bar:p.bar}))];
- const T=posTotals();
- const cartHtml=P.cart.length?P.cart.map((l,i)=>`<div class="cline v-${volet(l.cat)}">
-   <div><div style="font-weight:600">${esc(l.name)}</div><div class="note num">${fmtM(l.unit)} × ${l.qty}${l.disc?` · remise ${l.disc} %`:''}</div></div>
-   <div class="num" style="font-weight:600;text-align:right">${fmtM(lineTotal(l))}</div>
-   <div class="row" style="gap:8px"><span class="qty"><button data-a="qty" data-i="${i}" data-d="-1" aria-label="Diminuer">−</button><span class="num">${l.qty}</span><button data-a="qty" data-i="${i}" data-d="1" aria-label="Augmenter">+</button></span>
-    <label class="note" for="disc-${i}">Remise %</label><input class="input disc num" id="disc-${i}" data-in="disc" data-i="${i}" value="${l.disc||''}" inputmode="decimal" placeholder="0"></div>
-   <div style="text-align:right"><button class="btn ghost sm" data-a="rmline" data-i="${i}" aria-label="Retirer">${ic('x')}</button></div>
-  </div>`).join(''):'<p class="note" style="padding:12px 0">Aucun article. Choisissez une catégorie, puis touchez la prestation ou le produit à ajouter.</p>';
+ const P=ui.pos; const q=P.q.trim().toLowerCase();const all=posItems();
+ const T=posTotals();if(P.sel===undefined||P.sel>=P.cart.length)P.sel=P.cart.length-1;
  const overDisc=!isAdmin()&&P.cart.some(l=>l.disc>S.perms.discountMax);
- const advAvail=P.clientId?clientAdvBal(P.clientId)-P.pays.filter(p=>p.method===ADV).reduce((a,p)=>a+p.amount,0):0;
- if(P.method===ADV&&clientAdvBal(P.clientId)<=0)P.method='Espèces';
- const itemBtn=i=>`<button class="item v-${volet(i.cat)}" data-a="add" data-k="${i.k}" data-id="${i.id}" ${i.k==='P'&&(i.stock<=0||!i.price)?'disabled':''}><span class="n">${esc(i.name)}</span><span class="m">${esc(i.meta)}</span><span class="p num">${i.pt}</span></button>`;
+ const itemBtn=i=>`<button class="item v-${volet(i.cat)}" data-a="add" data-k="${i.k}" data-id="${i.id}" ${i.k==='P'&&(i.stock<=0||!i.price)?'disabled':''}><span class="n">${esc(i.name)}</span><span class="m">${esc(i.code)} · ${esc(i.meta)}</span><span class="p num">${i.pt}</span></button>`;
  const CATS=[...new Set(all.map(i=>i.cat))].sort((a,b)=>{const o=['Soins du corps','Thérapie','Clubs','Herboristerie'];return (o.indexOf(a)<0?9:o.indexOf(a))-(o.indexOf(b)<0?9:o.indexOf(b))});
  let right;
- if(q){const hits=all.filter(i=>i.name.toLowerCase().includes(q)||(i.sku||'').toLowerCase().includes(q)||(i.bar||'').includes(q));
-  right=`<div class="note">${hits.length} résultat${hits.length>1?'s':''} pour « ${esc(P.q)} »</div><div class="items">${hits.map(itemBtn).join('')||'<p class="note">Aucun article ne correspond.</p>'}</div>`}
+ if(q){const m=/^(\d+)\s*\*\s*(.+)$/.exec(P.q.trim());const {hits}=posFind(m?m[2]:P.q);
+  right=`<div class="spread"><span class="note">${hits.length} résultat${hits.length>1?'s':''} pour « ${esc(P.q)} »${hits.length===1?' · Entrée pour ajouter':''}</span><button class="btn sm ghost" data-a="posclearq">Effacer</button></div><div class="items">${hits.map(itemBtn).join('')||'<p class="note">Aucun article ne correspond.</p>'}</div>`}
+ else if(P.cat==='__all'){right=`<div class="crumb"><button class="btn sm" data-a="poscat" data-c="">${ic('chev')}Catégories</button><b>Tous les articles</b><span class="note">${all.length}</span></div><div class="items">${all.map(itemBtn).join('')}</div>`}
  else if(!P.cat||!CATS.includes(P.cat)){
-  right=`<div class="cat-tiles">${CATS.map(c=>{const n=all.filter(i=>i.cat===c);return `<button class="cat-tile v-${volet(c)}" data-a="poscat" data-c="${esc(c)}"><b>${esc(c)}</b><span>${n.every(i=>i.pack)?n.length+' formule'+(n.length>1?'s':'')+' à séances':n.length+' article'+(n.length>1?'s':'')+(n.some(i=>i.pack)?' · dont '+n.filter(i=>i.pack).length+' packs':'')}</span></button>`}).join('')}</div>`}
+  right=`<div class="spread"><h2 style="letter-spacing:.02em">Catégories</h2><span class="note">${all.length} articles · touchez une catégorie</span></div>
+  <div class="tiles">${CATS.map(c=>`<button class="tile v-${volet(c)}" data-a="poscat" data-c="${esc(c)}"><span>${esc(c)}</span>${catIcon(c)}<span class="cnt">${all.filter(i=>i.cat===c).length}</span></button>`).join('')}<button class="tile all" data-a="poscat" data-c="__all"><span>Tous les articles</span><span class="cnt">${all.length}</span></button></div>`}
  else{const inCat=all.filter(i=>i.cat===P.cat);const one=inCat.filter(i=>!i.pack),multi=inCat.filter(i=>i.pack);
   right=`<div class="crumb"><button class="btn sm" data-a="poscat" data-c="">${ic('chev')}Catégories</button><span class="vtag v-${volet(P.cat)}">${esc(P.cat)}</span><span class="note">${inCat.length} article${inCat.length>1?'s':''}</span></div>
   ${one.length?`${multi.length?`<div class="subhead">${P.cat==='Herboristerie'?'Produits':'À la séance'}</div>`:''}<div class="items">${one.map(itemBtn).join('')}</div>`:''}
   ${multi.length?`<div class="subhead">Packs, cycles et abonnements</div><div class="items">${multi.map(itemBtn).join('')}</div>`:''}`}
- // Récapitulatif des ventes du jour
  const daySales=S.sales.filter(s=>s.date===TODAY).sort((a,b)=>(b.time||'').localeCompare(a.time||''));
  const live=daySales.filter(s=>s.status!=='annulée');
  const dayPays=S.payments.filter(p=>p.date===TODAY&&p.method!==ADV);
@@ -907,65 +938,74 @@ function viewPOS(){
  const banner=!S.cash?`<div class="cash-banner closed"><div><b>La caisse est fermée</b><div class="note">Comptez le fonds de caisse et ouvrez la caisse pour commencer la journée.</div></div><button class="btn primary" data-a="modal" data-m="openCash">Ouvrir la caisse</button></div>`
   :S.cash.opened<TODAY?`<div class="cash-banner late"><div><b>La caisse du ${fmtD(S.cash.opened)} n'a pas été clôturée</b><div class="note">Clôturez-la (comptage du tiroir), puis ouvrez la caisse du jour.</div></div><button class="btn terra" data-a="modal" data-m="closeCash">Clôturer</button></div>`
   :nowMin()>=19*60?`<div class="cash-banner eod"><div><b>Fin de journée</b><div class="note">Pensez à clôturer la caisse : comptage du tiroir et rapport Z.</div></div><button class="btn terra" data-a="modal" data-m="closeCash">Clôturer la caisse</button></div>`:'';
+ const nArt=P.cart.reduce((a,l)=>a+l.qty,0);const sel=P.cart[P.sel];
+ const lines=P.cart.length?P.cart.map((l,i)=>`<div class="tk-line v-${volet(l.cat)} ${i===P.sel?'sel':''}" data-a="possel" data-i="${i}"><div class="tk-n"><b>${esc(l.name)}</b><span class="note num">${l.qty} × ${fmtM(l.unit)}${l.disc?` · −${String(l.disc).replace('.',',')} %`:''}${l.priceEdited?' · prix modifié':''}</span></div><div class="tk-r"><span class="num">${fmtM(lineTotal(l))}</span><span class="qty"><button data-a="qty" data-i="${i}" data-d="-1" aria-label="Diminuer">−</button><button data-a="qty" data-i="${i}" data-d="1" aria-label="Augmenter">+</button></span></div></div>`).join('')
+  :`<div class="tk-empty"><b>Ticket vide</b><span>Touchez un article, ou tapez son nom ou son code (ex. SC-001) puis Entrée. « 2*SC-001 » ajoute 2 unités.</span></div>`;
+ const pk=parkedGet();const act=(a,label,sub,dis,cls='')=>`<button class="tk-act ${cls}" data-a="${a}" ${dis?'disabled':''}>${label}${sub?`<small>${sub}</small>`:''}</button>`;
+ const ticket=`<div class="ticket ${posBack()?'back':''}">
+  <div class="tk-head"><div><b class="tk-title">Ticket</b> <span class="note num">· ${fmtD(posDate())}${posBack()?'':' · '+hm(nowMin())}</span></div><button class="btn sm" data-a="modal" data-m="posClient">${P.clientId?esc(cname(P.clientId)):'+ Cliente'}</button></div>
+  ${isAdmin()?`<div class="tk-date ${posBack()?'on':''}"><label for="pos-date">Date de la vente</label><input class="input" type="date" id="pos-date" data-in="posdate" value="${posDate()}" max="${TODAY}">${posBack()?`<input class="input num" type="time" id="pos-time" data-in="postime" value="${esc(P.time||'12:00')}" aria-label="Heure"><button class="btn sm ghost" data-a="posdatetoday">Aujourd'hui</button>`:''}</div>${posBack()?`<div class="tk-back">Vente antérieure : enregistrée au ${fmtD(posDate())}. Les espèces n'entrent pas dans le tiroir du jour.</div>`:''}`:''}
+  ${pk.length?`<div class="parked"><span class="note">En attente :</span>${pk.map(w=>`<span class="chip" data-a="unpark" data-id="${w.id}" role="button" tabindex="0" title="Reprendre cette vente">${esc(w.at)} · ${esc(w.clientId?cname(w.clientId):'Passage')} · ${fmtM(docTotal(w.cart))}<button class="x" data-a="dropParked" data-id="${w.id}" aria-label="Supprimer">×</button></span>`).join('')}</div>`:''}
+  ${P.clientId?memberHint(P.clientId):''}
+  <div class="tk-lines">${lines}</div>
+  ${P.note?`<div class="tk-note">Note : ${esc(P.note)}</div>`:''}
+  <div class="tk-foot">
+   <div class="spread note num"><span>${P.cart.length} ligne${P.cart.length>1?'s':''} · ${nArt} article${nArt>1?'s':''}</span><span>${T.disc?'Remises − '+fmtM(T.disc)+' · ':''}HT ${fmtM(docHT(P.cart))}</span></div>
+   <div class="tk-total"><span>Total</span><b class="num">${fmtM(T.total).replace(' DT','')}</b></div>
+   ${overDisc?`<div class="alert crit"><span>Remise supérieure à ${S.perms.discountMax} % : validation d'un administrateur requise.</span></div>`:''}
+   <div class="tk-actions">${act('posQtyM','Quantité','F4',!sel)}${act('posPriceM','Prix',isAdmin()?'admin':'',!sel||!isAdmin())}${act('posDiscM','Remise','ligne ou ticket',!P.cart.length)}${act('posDel','Supprimer','la ligne',!sel,'danger')}
+    ${act('posClientM','Cliente','F7',false)}${act('posNoteM','Note','',false)}${act('park','En attente','F8',!P.cart.length||P.busy)}${act('posCancel','Annuler','la vente',!P.cart.length,'danger')}</div>
+   <button class="btn-pay" data-a="posPay" ${!P.cart.length||overDisc||P.busy?'disabled':''}>Payer <small>F12</small></button>
+   <div class="note kbd-hint">F2 rechercher · F9 espèces · F10 carte · F12 payer</div>
+  </div></div>`;
  return `${banner}
- <div class="pos">
-  <div class="pos-left">
-   <div class="card" style="display:grid;gap:12px">
-    <div class="spread"><h2>Nouvelle vente</h2>${P.cart.length?`<button class="btn ghost sm" data-a="clearcart">Vider</button>`:''}</div>
-    <div class="row" style="flex-wrap:nowrap"><select class="input" id="pos-client" data-in="posclient"><option value="">Client de passage</option>${S.clients.map(c=>`<option value="${c.id}" ${P.clientId===c.id?'selected':''}>${esc(c.first+' '+c.last)} · ${esc(c.phone)}</option>`).join('')}</select><button class="btn sm" data-a="modal" data-m="newClient" data-from="pos" title="Nouveau client">${ic('plus')}</button></div>
-    ${(()=>{const pk=parkedGet();return pk.length?`<div class="parked"><span class="note">En attente :</span>${pk.map(w=>`<span class="chip" data-a="unpark" data-id="${w.id}" role="button" tabindex="0" title="Reprendre cette vente">${esc(w.at)} · ${esc(w.clientId?cname(w.clientId):'Passage')} · ${fmtM(docTotal(w.cart))}<button class="x" data-a="dropParked" data-id="${w.id}" aria-label="Supprimer">×</button></span>`).join('')}</div>`:''})()}
-    ${P.clientId?memberHint(P.clientId):''}
-    <div>${cartHtml}</div>
-    ${P.cart.length?`<div class="row" style="gap:8px"><label class="note" for="pos-gdisc">Remise sur toute la vente</label><input class="input disc num" id="pos-gdisc" inputmode="decimal" placeholder="%"><button class="btn sm" data-a="globaldisc">Appliquer</button></div>`:''}
-    <div class="totals num">
-     <div class="spread"><span class="muted">Sous-total TTC</span><span>${fmtM(T.sub)}</span></div>
-     <div class="spread"><span class="muted">Remises</span><span>${T.disc?'− '+fmtM(T.disc):fmtM(0)}</span></div>
-     <div class="spread"><span class="muted">Total HT</span><span>${fmtM(docHT(P.cart))}</span></div>
-     ${taxBreakdown(P.cart).map(([r,o])=>`<div class="spread"><span class="muted">TVA ${String(r).replace('.',',')} %</span><span>${fmtM(o.tva)}</span></div>`).join('')}
-     <div class="spread grand"><span>Total TTC</span><span>${fmtM(T.total)}</span></div>
-    </div>
-    ${overDisc?`<div class="alert crit"><span>Remise supérieure à ${S.perms.discountMax} % : la validation d'un administrateur est requise.</span></div>`:''}
-   </div>
-   <div class="card" style="display:grid;gap:12px">
-    ${P.detail?`    <div class="spread"><h3>Règlement</h3><div class="chips" role="group" aria-label="Type de règlement"><button class="chip ${P.mode==='complet'?'on':''}" data-a="paymode" data-m="complet">Paiement complet</button><button class="chip ${P.mode==='avance'?'on':''}" data-a="paymode" data-m="avance">Vente avec avance</button></div></div>
-    ${P.mode==='avance'?`<div class="alert info" style="display:grid;gap:8px"><span>Le client verse un acompte sur cette vente ; le reste est suivi comme solde dû et encaissé plus tard depuis « Ventes à solder ». Pour un paiement avant toute vente, utilisez « Avances clients ».</span>
-     <div class="row"><span class="note">Avance rapide :</span>${[30,50].map(x=>`<button class="chip" data-a="advpct" data-p="${x}" ${!P.cart.length?'disabled':''}>${x} % · ${fmtM(Math.round(T.total*x/100/1000)*1000)}</button>`).join('')}</div>
-     <div class="field"><label for="pos-due">Solde attendu le</label><input class="input" id="pos-due" type="date" data-in="posdue" value="${P.due||addDays(TODAY,7)}" min="${TODAY}"></div></div>`:''}
-    <div class="chips">${METHODS.map(m=>`<button class="chip ${P.method===m?'on':''}" data-a="paymethod" data-m="${m}">${m}</button>`).join('')}${advAvail>0?`<button class="chip ${P.method===ADV?'on':''}" data-a="paymethod" data-m="${ADV}">Avance client · ${fmtM(advAvail)}</button>`:''}</div>
-    ${advAvail>0?`<div class="alert info"><span><b>${esc(cname(P.clientId))}</b> dispose de ${fmtM(clientAdvBal(P.clientId))} d'avance. Choisissez « Avance client » pour la déduire de cette vente.</span></div>`:''}
-    <div class="row" style="flex-wrap:nowrap"><input class="input num" id="pos-amount" data-in="posamount" inputmode="decimal" placeholder="${toInput(Math.max(T.rest,0))}" value="${esc(P.amount)}"><button class="btn" data-a="addpay" ${T.rest<=0||!P.cart.length?'disabled':''}>Ajouter</button></div>
-    <div class="paylist">${P.pays.map((p,i)=>`<div class="payrow"><span>${p.method}</span><span class="row" style="gap:6px"><b class="num">${fmtM(p.amount)}</b><button class="btn ghost sm" data-a="rmpay" data-i="${i}" aria-label="Retirer">${ic('x')}</button></span></div>`).join('')}</div>
-    <div class="spread num" style="font-size:15px"><span>${T.rest>=0?'Reste à payer':'Monnaie à rendre'}</span><b style="color:${T.rest>0?'var(--terra)':'var(--good)'}">${fmtM(Math.abs(T.rest))}</b></div>
-    ${(P.mode==='avance'||(T.rest>0&&P.pays.length))&&!P.clientId?'<div class="alert warn"><span>Une vente avec avance nécessite un client identifié pour suivre le solde dû.</span></div>':''}
-    ${P.mode==='avance'&&P.cart.length&&!P.pays.length?'<div class="note">Ajoutez le montant de l\'avance reçue, ou utilisez un raccourci 30 % / 50 %.</div>':''}
-    <button class="btn terra" id="pos-validate" style="justify-content:center;padding:12px;font-size:15px" data-a="validate" ${!P.cart.length||overDisc||P.busy||(T.rest>0&&!P.clientId)||(!P.pays.length&&T.total>0&&!P.clientId)||(P.mode==='avance'&&(!P.pays.length||!P.clientId))?'disabled':''}>${P.busy?'Enregistrement…':P.mode==='avance'&&T.rest>0?'Enregistrer la vente avec avance de '+fmtM(T.paid):T.rest>0&&P.pays.length?'Valider avec acompte':T.rest>0?'Valider sans paiement (créance)':'Valider la vente'}</button>
-    <div class="note">Un double clic ne crée pas deux ventes : chaque panier porte une clé unique et le bouton se verrouille pendant l'enregistrement.</div>
-   `:(()=>{const dis=!P.cart.length||overDisc||P.busy;
-     if(P.cashMode){const tend=parseM(P.tendered||'');const t=isNaN(tend)?null:tend;const ch=t===null?null:t-T.rest;
-      const sugg=[...new Set([T.rest,...[5000,10000,20000,50000,100000].map(u=>Math.ceil(T.rest/u)*u)])].filter(v=>v>=T.rest).sort((x,y)=>x-y).slice(0,5);
-      return `<div class="spread"><h3>Espèces</h3><span class="note">À payer <b class="num">${fmtM(T.rest)}</b></span></div><div class="cash-pad">
-       <div class="field"><label for="pos-tender">Montant reçu</label><input class="input num big" id="pos-tender" data-in="postender" inputmode="decimal" value="${esc(P.tendered||'')}" placeholder="${toInput(T.rest)}" autocomplete="off"></div>
-       <div class="chips">${sugg.map(v=>`<button class="chip" data-a="tender" data-v="${v}">${v===T.rest?'Montant exact':fmtM(v)}</button>`).join('')}</div>
-       <div class="spread num big-line"><span>Monnaie à rendre</span><b style="color:${ch!==null&&ch<0?'var(--crit)':'var(--good)'}">${ch===null?fmtM(0):ch<0?'Montant insuffisant':fmtM(ch)}</b></div>
-       <div class="row" style="flex-wrap:nowrap"><button class="btn" data-a="cashcancel">Retour</button><button class="btn terra grow" id="pos-cashpay" data-a="cashpay" ${dis||(ch!==null&&ch<0)?'disabled':''}>${P.busy?'Enregistrement…':'Encaisser '+fmtM(t!==null&&t>=T.rest?t:T.rest)}</button></div></div>`}
-     return `<div class="spread"><h3>Règlement</h3><span class="note">${P.cart.length?'À payer <b class="num">'+fmtM(Math.max(T.rest,0))+'</b>':'Panier vide'}</span></div>
-      <div class="pay-quick">${METHODS.map(m=>`<button class="btn ${m==='Espèces'?'terra':''}" data-a="quickpay" data-m="${m}" ${dis?'disabled':''}>${m}</button>`).join('')}${advAvail>0?`<button class="btn wide" data-a="quickpay" data-m="${ADV}" ${dis?'disabled':''}>Avance client · ${fmtM(advAvail)}</button>`:''}</div>
-      ${overDisc?'':`<div class="note">Un seul geste : la vente est réglée en totalité et enregistrée. En espèces, saisissez le montant reçu pour calculer la monnaie.</div>`}`})()}
-    <div class="row" style="justify-content:space-between;gap:8px"><button class="btn ghost sm" data-a="paydetail">${P.detail?'‹ Paiement rapide':'Paiement partagé, acompte ou à crédit'}</button><button class="btn ghost sm" data-a="park" ${!P.cart.length||P.busy?'disabled':''}>Mettre en attente</button></div>
-    <div class="note kbd-hint">Clavier : <kbd>F2</kbd> rechercher · <kbd>F9</kbd> espèces · <kbd>F10</kbd> carte · <kbd>F12</kbd> espèces, montant exact · <kbd>F4</kbd> mettre en attente</div>
-   </div>
+ <div class="pos2">${ticket}
+  <div class="pos-right">
+   <div class="search pos-search">${ic('search')}<input class="input" id="pos-q" data-in="posq" placeholder="Nom ou code · Entrée pour ajouter · 2*SC-001 = quantité 2" value="${esc(P.q)}" autocomplete="off"></div>
+   <div class="card" style="display:grid;gap:14px">${right}</div>
    ${cashMini()}
   </div>
-  <div class="pos-right">
-   <div class="card" style="display:grid;gap:14px">
-    <div class="search">${ic('search')}<input class="input" id="pos-q" data-in="posq" placeholder="Rechercher une prestation ou un produit (nom, SKU, code-barres)" value="${esc(P.q)}" autocomplete="off"></div>
-    ${right}
-   </div>
-  </div>
-  ${recap}
  </div>
- ${openAdvances().length?advancesCard().replace('style="grid-column:1/2"','style="margin-top:16px"'):''}`;
+ ${recap}
+ ${openAdvances().length?advancesCard().replace('style="grid-column:1/2"','style="margin-top:16px"'):''}
+ ${P.payOpen&&P.cart.length?posPayOverlay():''}`;
 }
+/* Fenêtre de paiement : paiement rapide par moyen, espèces avec monnaie, ou paiement détaillé */
+function posPayOverlay(){const P=ui.pos;const T=posTotals();const overDisc=!isAdmin()&&P.cart.some(l=>l.disc>S.perms.discountMax);
+ const advAvail=P.clientId?clientAdvBal(P.clientId)-P.pays.filter(p=>p.method===ADV).reduce((a,p)=>a+p.amount,0):0;
+ if(P.method===ADV&&clientAdvBal(P.clientId)<=0)P.method='Espèces';
+ let body;
+ if(P.detail){body=`<div class="spread"><h3>Règlement détaillé</h3><div class="chips" role="group" aria-label="Type de règlement"><button class="chip ${P.mode==='complet'?'on':''}" data-a="paymode" data-m="complet">Paiement complet</button><button class="chip ${P.mode==='avance'?'on':''}" data-a="paymode" data-m="avance">Vente avec avance</button></div></div>
+    ${P.mode==='avance'?`<div class="alert info" style="display:grid;gap:8px"><span>Le client verse un acompte sur cette vente ; le reste est suivi comme solde dû et encaissé plus tard depuis « Ventes à solder ». Pour un paiement avant toute vente, utilisez « Avances clients ».</span>
+     <div class="row"><span class="note">Avance rapide :</span>${[30,50].map(x=>`<button class="chip" data-a="advpct" data-p="${x}">${x} % · ${fmtM(Math.round(T.total*x/100/1000)*1000)}</button>`).join('')}</div>
+     <div class="field"><label for="pos-due">Solde attendu le</label><input class="input" id="pos-due" type="date" data-in="posdue" value="${P.due||addDays(TODAY,7)}" min="${TODAY}"></div></div>`:''}
+    <div class="chips">${METHODS.map(m=>`<button class="chip ${P.method===m?'on':''}" data-a="paymethod" data-m="${m}">${m}</button>`).join('')}${advAvail>0?`<button class="chip ${P.method===ADV?'on':''}" data-a="paymethod" data-m="${ADV}">Avance client · ${fmtM(advAvail)}</button>`:''}</div>
+    <div class="row" style="flex-wrap:nowrap"><input class="input num" id="pos-amount" data-in="posamount" inputmode="decimal" placeholder="${toInput(Math.max(T.rest,0))}" value="${esc(P.amount)}"><button class="btn" data-a="addpay" ${T.rest<=0?'disabled':''}>Ajouter</button></div>
+    <div class="paylist">${P.pays.map((p,i)=>`<div class="payrow"><span>${p.method}</span><span class="row" style="gap:6px"><b class="num">${fmtM(p.amount)}</b><button class="btn ghost sm" data-a="rmpay" data-i="${i}" aria-label="Retirer">${ic('x')}</button></span></div>`).join('')}</div>
+    <div class="spread num" style="font-size:15px"><span>${T.rest>=0?'Reste à payer':'Monnaie à rendre'}</span><b style="color:${T.rest>0?'var(--terra)':'var(--good)'}">${fmtM(Math.abs(T.rest))}</b></div>
+    ${(P.mode==='avance'||(T.rest>0&&P.pays.length))&&!P.clientId?'<div class="alert warn"><span>Une vente avec avance nécessite une cliente identifiée pour suivre le solde dû.</span></div>':''}
+    <button class="btn terra" id="pos-validate" style="justify-content:center;padding:12px;font-size:15px" data-a="validate" ${!P.cart.length||overDisc||P.busy||(T.rest>0&&!P.clientId)||(!P.pays.length&&T.total>0&&!P.clientId)||(P.mode==='avance'&&(!P.pays.length||!P.clientId))?'disabled':''}>${P.busy?'Enregistrement…':P.mode==='avance'&&T.rest>0?'Enregistrer la vente avec avance de '+fmtM(T.paid):T.rest>0&&P.pays.length?'Valider avec acompte':T.rest>0?'Valider sans paiement (créance)':'Valider la vente'}</button>`}
+ else if(P.cashMode){const tend=parseM(P.tendered||'');const t=isNaN(tend)?null:tend;const ch=t===null?null:t-T.rest;const dis=P.busy;
+  const sugg=[...new Set([T.rest,...[5000,10000,20000,50000,100000].map(u=>Math.ceil(T.rest/u)*u)])].filter(v=>v>=T.rest).sort((x,y)=>x-y).slice(0,5);
+  body=`<div class="spread"><h3>Espèces</h3><span class="note">À payer <b class="num">${fmtM(T.rest)}</b></span></div><div class="cash-pad">
+   <div class="field"><label for="pos-tender">Montant reçu</label><input class="input num big" id="pos-tender" data-in="postender" inputmode="decimal" value="${esc(P.tendered||'')}" placeholder="${toInput(T.rest)}" autocomplete="off"></div>
+   <div class="chips">${sugg.map(v=>`<button class="chip" data-a="tender" data-v="${v}">${v===T.rest?'Montant exact':fmtM(v)}</button>`).join('')}</div>
+   <div class="spread num big-line"><span>Monnaie à rendre</span><b style="color:${ch!==null&&ch<0?'var(--crit)':'var(--good)'}">${ch===null?fmtM(0):ch<0?'Montant insuffisant':fmtM(ch)}</b></div>
+   <div class="row" style="flex-wrap:nowrap"><button class="btn" data-a="cashcancel">Retour</button><button class="btn terra grow" id="pos-cashpay" data-a="cashpay" ${dis||(ch!==null&&ch<0)?'disabled':''}>${P.busy?'Enregistrement…':'Encaisser '+fmtM(t!==null&&t>=T.rest?t:T.rest)}</button></div></div>`}
+ else{const dis=P.busy;body=`<div class="pay-total"><span>À payer</span><b class="num">${fmtM(Math.max(T.rest,0))}</b></div>
+  <div class="pay-quick big">${METHODS.map(m=>`<button class="btn ${m==='Espèces'?'terra':''}" data-a="quickpay" data-m="${m}" ${dis?'disabled':''}>${m}${m==='Espèces'?' <small>F9</small>':m==='Carte'?' <small>F10</small>':''}</button>`).join('')}${advAvail>0?`<button class="btn wide" data-a="quickpay" data-m="${ADV}" ${dis?'disabled':''}>Avance client · ${fmtM(advAvail)}</button>`:''}</div>
+  ${advAvail>0?`<div class="alert info"><span><b>${esc(cname(P.clientId))}</b> dispose de ${fmtM(clientAdvBal(P.clientId))} d'avance.</span></div>`:''}
+  <div class="note">Un seul geste : la vente est réglée en totalité et enregistrée. En espèces, saisissez le montant reçu pour calculer la monnaie.</div>`}
+ return `<div class="overlay" data-a="posPayBg"><div class="modal" role="dialog" aria-modal="true" aria-label="Paiement"><div class="modal-h"><h2>Paiement${posBack()?' · vente du '+fmtD(posDate()):''}</h2><button class="btn ghost sm" data-a="posPayClose" aria-label="Fermer">${ic('x')}</button></div>
+  <div class="modal-b" style="display:grid;gap:12px">${body}<button class="btn ghost sm" data-a="paydetail" style="justify-self:start">${P.detail?'‹ Paiement rapide':'Paiement partagé, acompte ou à crédit'}</button>${posBack()?'<div class="note">Vente antérieure : les espèces sont enregistrées à la date de la vente, sans entrer dans le tiroir du jour.</div>':''}</div></div></div>`}
+function posLineModal(kind){const P=ui.pos;const l=P.cart[P.sel];
+ if(kind==='posClient')return modalWrap('Cliente du ticket',`<div class="row" style="flex-wrap:nowrap"><select class="input" id="pc-client"><option value="">Cliente de passage</option>${S.clients.map(c=>`<option value="${c.id}" ${P.clientId===c.id?'selected':''}>${esc(c.first+' '+c.last)} · ${esc(c.phone)}</option>`).join('')}</select><button class="btn" data-a="modal" data-m="newClient" data-from="pos">${ic('plus')}Nouvelle</button></div>`,`<button class="btn" data-a="closeModal">Annuler</button><button class="btn primary" data-a="posSetClient">Valider</button>`);
+ if(kind==='posNote')return modalWrap('Note du ticket',`<div class="field"><label for="pn-note">Note (imprimée sur le ticket)</label><input class="input" id="pn-note" value="${esc(P.note||'')}" placeholder="Ex. offert par la direction, cadeau…"></div>`,`<button class="btn" data-a="closeModal">Annuler</button><button class="btn primary" data-a="posSetNote">Valider</button>`);
+ if(!l)return '';
+ if(kind==='posQty')return modalWrap('Quantité · '+esc(l.name),`<div class="field"><label for="pq-v">Quantité</label><input class="input num big" id="pq-v" value="${l.qty}" inputmode="numeric" autofocus></div>`,`<button class="btn" data-a="closeModal">Annuler</button><button class="btn primary" data-a="posSetQty">Valider</button>`);
+ if(kind==='posPrice')return modalWrap('Prix · '+esc(l.name),`<div class="field"><label for="pp-v">Prix unitaire TTC (DT)</label><input class="input num big" id="pp-v" value="${toInput(l.unit)}" inputmode="decimal" autofocus></div><div class="note">Prix catalogue : ${fmtM(l.listUnit||l.unit)}. Le changement est inscrit au journal.</div>`,`<button class="btn" data-a="closeModal">Annuler</button><button class="btn primary" data-a="posSetPrice">Valider</button>`);
+ if(kind==='posDisc')return modalWrap('Remise',`<div class="field"><label for="pd-v">Remise en %</label><input class="input num big" id="pd-v" value="${l&&l.disc?String(l.disc).replace('.',','):''}" inputmode="decimal" autofocus placeholder="0"></div>${isAdmin()?'':`<div class="note">Remise maximale sans validation : ${S.perms.discountMax} %.</div>`}`,`<button class="btn" data-a="closeModal">Annuler</button><button class="btn" data-a="posSetDisc" data-all="1">Sur tout le ticket</button><button class="btn primary" data-a="posSetDisc">Sur « ${esc(l.name.slice(0,24))} »</button>`);
+ return ''}
 function cashMini(){const c=S.cash;return `<div class="card cash-mini"><div><h3>Tiroir-caisse</h3><div class="note">${c?`Ouvert à ${c.openTime} par ${esc(userName(c.user))} · solde espèces <b class="num">${fmtM(cashTheo(c))}</b>`:'Fermé : ouvrez-le pour encaisser des espèces'}</div></div><div class="row">${c?`<button class="btn sm" data-a="modal" data-m="cashMove">Entrée ou sortie</button><button class="btn sm" data-a="modal" data-m="cashReport" data-id="${c.id}">Rapport X</button><button class="btn sm terra" data-a="modal" data-m="closeCash">Clôturer</button>`:`<button class="btn sm primary" data-a="modal" data-m="openCash">Ouvrir la caisse</button>`}</div></div>`}
 function openAdvances(){return liveSales().filter(s=>s.clientId&&s.total-paidFor(s.id)>0&&!S.invoices.some(i=>i.saleId===s.id&&i.status!=='annulée')).sort((a,b)=>(a.dueDate||a.date).localeCompare(b.dueDate||b.date))}
 function advancesCard(){const rows=openAdvances();return `<div class="card" style="grid-column:1/2"><div class="card-h"><div><h3>Ventes à solder</h3><div class="note">Ventes enregistrées avec un acompte, dont le reste est à encaisser</div></div><span class="pill ${rows.length?'p-warn':'p-neutral'}">${rows.length}</span></div>
@@ -1716,14 +1756,17 @@ function viewVentes(){
  const kpi=(l,v,s2)=>`<div class="kpi"><div class="eyebrow">${l}</div><div class="v num">${v}</div><div class="s">${s2}</div></div>`;
  const methods=['tous',...METHODS,ADV];
  return `<div class="head"><div><h1>Ventes</h1><p>Toutes les ventes, ticket par ticket. Cliquez sur une ligne pour revoir le ticket.</p></div>
-  <div class="row"><select class="input" id="sales-month" data-in="salesmonth" style="width:auto" aria-label="Mois"><option value="tous" ${V.month==='tous'?'selected':''}>Tous les mois</option>${months.map(m=>`<option value="${m}" ${V.month===m?'selected':''}>${mLabel(m)}</option>`).join('')}</select></div></div>
- ${salesChart(V.month)}
+  <div class="row"><button class="btn" data-a="xlsxSales">${ic('dl')}Exporter Excel</button>${isAdmin()?`<button class="btn" data-a="saleBackdate" title="Saisir une vente oubliée, à une date passée">${ic('cal')}Vente antérieure</button>`:''}<button class="btn primary" data-a="go" data-v="pos">${ic('plus')}Nouvelle vente</button></div></div>
  <div class="kpis">${kpi('Tickets',live.length,rows.length-live.length?(rows.length-live.length)+' annulé(s) non comptés':'Ventes validées')}${kpi('Total des ventes TTC',fmtM(tot),'HT '+fmtM(live.reduce((a,s)=>a+docHT(s.lines),0)))}${kpi('Encaissé',fmtM(paid),Object.entries(byM).map(([m,v])=>m+' '+fmtShort(v)).join(' · ')||'—')}${kpi('Reste à encaisser',fmtM(tot-paid),live.filter(s=>s.total>paidFor(s.id)).length+' vente(s) non soldée(s)')}</div>
- <div class="card"><div class="card-h"><div class="search" style="width:min(320px,100%)">${ic('search')}<input class="input" id="sales-q" data-in="salesq" placeholder="Cliente, n° de ticket, prestation, vendeuse" value="${esc(V.q)}"></div>
-  <div class="chips">${methods.map(m=>`<button class="chip ${V.method===m?'on':''}" data-a="salesmethod" data-m="${m}">${m==='tous'?'Tous moyens':m}</button>`).join('')}</div></div>
+ ${salesChart(V.month)}
+ <div class="filters"><div class="search" style="flex:1;min-width:220px">${ic('search')}<input class="input" id="sales-q" data-in="salesq" placeholder="Rechercher cliente, n° de ticket, prestation, vendeuse…" value="${esc(V.q)}"></div>
+  <select class="input" id="sales-month" data-in="salesmonth" style="width:auto" aria-label="Mois"><option value="tous" ${V.month==='tous'?'selected':''}>Tous les mois</option>${months.map(m=>`<option value="${m}" ${V.month===m?'selected':''}>${mLabel(m)}</option>`).join('')}</select>
+  <select class="input" id="sales-method" data-in="salesmeth" style="width:auto" aria-label="Moyen de paiement">${methods.map(m=>`<option value="${m}" ${V.method===m?'selected':''}>${m==='tous'?'Tous les moyens':m}</option>`).join('')}</select>
+  <span class="note">${rows.length} ticket${rows.length>1?'s':''}</span></div>
+ <div class="card" style="padding:0;overflow:hidden">
  <div class="tbl-wrap"><table><thead><tr><th>Date</th><th>Ticket</th><th>Cliente</th><th>Articles</th><th class="r">Total TTC</th><th class="r">Payé</th><th>Moyen</th><th>Vendu par</th><th>État</th></tr></thead><tbody>
  ${slice.map(s=>{const pd=paidFor(s.id);const ms=[...new Set(pays(s).map(p=>p.method))].join(', ')||'—';const st=s.status==='annulée'?'<span class="pill p-neutral">Annulée</span>':pd>=s.total?'<span class="pill p-good">Soldée</span>':pd>0?'<span class="pill p-warn">Partielle</span>':'<span class="pill p-crit">Non payée</span>';
-  return `<tr class="click" data-a="viewsale" data-id="${s.id}"><td class="num nw">${fmtD(s.date)}</td><td class="num nw">${esc(s.no)}</td><td>${esc(cname(s.clientId))}</td><td>${s.lines.map(l=>`<div><span class="v-${volet(l.cat)}"><span class="vdot"></span></span>${esc(l.name)}${l.qty>1?' × '+l.qty:''}</div>`).join('')}</td><td class="r num nw">${fmtM(s.total)}</td><td class="r num nw" style="${pd<s.total?'color:var(--terra);font-weight:600':''}">${fmtM(pd)}</td><td>${esc(ms)}</td><td>${esc(s.seller||userName(s.user))}</td><td>${st}</td></tr>`}).join('')||'<tr><td colspan="9" class="muted">Aucune vente pour ce filtre.</td></tr>'}
+  return `<tr class="click" data-a="viewsale" data-id="${s.id}"><td class="num nw">${fmtD(s.date)}${s.backdated?'<div class="note" title="Saisie le '+fmtD(s.entered.slice(0,10))+'">régularisée</div>':''}</td><td class="num nw">${esc(s.no)}</td><td>${esc(cname(s.clientId))}</td><td>${s.lines.map(l=>`<div><span class="v-${volet(l.cat)}"><span class="vdot"></span></span>${esc(l.name)}${l.qty>1?' × '+l.qty:''}</div>`).join('')}</td><td class="r num nw">${fmtM(s.total)}</td><td class="r num nw" style="${pd<s.total?'color:var(--terra);font-weight:600':''}">${fmtM(pd)}</td><td>${esc(ms)}</td><td>${esc(s.seller||userName(s.user))}</td><td>${st}</td></tr>`}).join('')||'<tr><td colspan="9" class="muted">Aucune vente pour ce filtre.</td></tr>'}
  </tbody></table></div>
  <div class="pager"><span>${rows.length} ticket${rows.length>1?'s':''}</span><span class="row"><button class="btn sm" data-a="salespage" data-d="-1" ${V.page<=1?'disabled':''} aria-label="Page précédente">${ic('chev')}</button>Page ${V.page} / ${pages}<button class="btn sm" data-a="salespage" data-d="1" ${V.page>=pages?'disabled':''} aria-label="Page suivante">${ic('chevr')}</button></span></div></div>`;
 }
@@ -1879,14 +1922,14 @@ function ticketHTML(s,change=0){
  const disc=s.lines.reduce((a,l)=>a+Math.round(l.unit*l.qty)-lineTotal(l),0);
  return `<div class="tk"><img src="${LOGO}" alt=""><div class="tk-brand">KAYANI</div><div class="c s">${esc(st.name)}${st.address?'<br>'+esc(st.address):''}${st.phone?'<br>Tél. '+esc(st.phone):''}${st.mf?'<br>MF '+esc(st.mf):''}</div><hr>
  <div class="c b">${off?'*** VENTE ANNULÉE ***':rest>0?'REÇU D\'AVANCE':'TICKET DE CAISSE'}</div>${off&&s.cancel?`<div class="c s">Annulée le ${fmtD(s.cancel.date)} ${s.cancel.time||''}</div>`:''}
- ${ln('N°',esc(s.no))}${ln('Date',fmtD(s.date)+' '+(s.time||''))}${ln('Caisse',esc(userName(s.user)))}${s.clientId?ln('Client',esc(cname(s.clientId))):''}<hr>
+ ${ln('N°',esc(s.no))}${ln('Date',fmtD(s.date)+' '+(s.time||''))}${s.backdated?`<div class="s">Saisie le ${fmtD(s.entered.slice(0,10))} (régularisation)</div>`:''}${ln('Caisse',esc(userName(s.user)))}${s.clientId?ln('Client',esc(cname(s.clientId))):''}<hr>
  ${s.lines.map(l=>`<div class="b">${esc(l.name)}</div>${ln(`${l.qty} × ${n(l.unit)}${l.disc?' −'+l.disc+'%':''}`,n(lineTotal(l)))}`).join('')}<hr>
  ${disc>0?ln('Remises','−'+n(disc)):''}${ln('Total HT',n(docHT(s.lines)))}${taxBreakdown(s.lines).filter(([r])=>+r>0).map(([r,o])=>ln('TVA '+String(r).replace('.',',')+' %',n(o.tva))).join('')}
  ${ln('TOTAL TTC',n(s.total)+' DT','tot')}<hr>
  ${pays.map(p=>ln(esc(p.amount<0?'Remboursé ('+p.method+')':p.method),n(p.amount))).join('')}${change>0?ln('Monnaie rendue',n(change)):''}
  ${rest>0?ln('Reste à payer',n(rest)+' DT','b')+(s.dueDate?`<div class="s">À régler avant le ${fmtD(s.dueDate)}</div>`:''):''}
  ${s.clientId&&pays.some(p=>p.method===ADV)?ln('Avance restante',n(clientAdvBal(s.clientId))):''}<hr>
- <div class="c">Merci de votre visite</div><div class="c s">Ticket non valable comme facture.<br>Facture sur demande.</div></div>`;
+ ${s.note?`<div class="s">${esc(s.note)}</div><hr>`:''}<div class="c">Merci de votre visite</div><div class="c s">Ticket non valable comme facture.<br>Facture sur demande.</div></div>`;
 }
 const invoiceOf=saleId=>S.invoices.find(i=>i.saleId===saleId&&i.status!=='annulée')||null;
 function invoicePrintHTML(i){const s=S.sales.find(x=>x.id===i.saleId);const pays=S.payments.filter(p=>p.saleId===s.id);const paid=paidFor(s.id);const st=invStatus(i);
@@ -1912,6 +1955,7 @@ function viewModal(){
   </div></div>`;
   return modalWrap(m.view?'Ticket '+esc(s.no):restR>0?'Vente avec avance enregistrée':'Vente enregistrée',`${m.view?(s.seller?`<div class="note">Vendu par ${esc(s.seller)}${s.note?' · '+esc(s.note):''}</div>`:''):`<div class="alert info"><span>Stock mis à jour, ${pays.length} paiement${pays.length>1?'s':''} enregistré${pays.length>1?'s':''}${pays.some(p=>p.method==='Espèces')?', mouvement de caisse créé':''}.${m.change>0?` <b>Monnaie à rendre : ${fmtM(m.change)}</b>`:''}</span></div>`}
   ${off?`<div class="alert crit"><span><b>Vente annulée</b>${s.cancel?` le ${fmtD(s.cancel.date)} à ${s.cancel.time} par ${esc(userName(s.cancel.user))} · motif : ${esc(s.cancel.reason)}${s.cancel.refund?` · remboursé ${fmtM(s.cancel.refund)} (${esc(s.cancel.method)})`:''}${s.cancel.advance?` · ${fmtM(s.cancel.advance)} recrédités sur l'avance`:''}`:''}.</span></div>`:choice}<div class="tk-prev">${ticketHTML(s,m.change||0)}</div>`,`${!off?`<button class="btn danger" data-a="modal" data-m="cancelSale" data-id="${s.id}" ${can('refund')?'':'disabled title="Réservé à l\'administrateur"'}>Annuler la vente</button>`:off&&m.view?`<button class="btn" data-a="printTicket" data-id="${s.id}">Imprimer</button>`:''}${m.view&&restR>0&&s.clientId?`<button class="btn" data-a="modal" data-m="paySale" data-id="${s.id}">Encaisser le solde</button>`:''}<button class="btn ${m.view?'primary':''}" data-a="closeModal">${m.view?'Fermer':'Nouvelle vente'}</button>`,true)}
+ if(['posQty','posPrice','posDisc','posClient','posNote'].includes(m.type))return posLineModal(m.type);
  if(m.type==='alerts'){const al=buildAlerts();return modalWrap('Alertes',`<div style="display:grid;gap:8px">${al.map(a=>`<div class="alert ${a[0]}"><span>${a[1]}</span></div>`).join('')||'<p class="note">Aucune alerte pour le moment.</p>'}</div>`,`<button class="btn primary" data-a="closeModal">Fermer</button>`)}
  if(m.type==='useSession'){const ms=S.memberships.find(x=>x.id===m.id);if(!ms)return'';const f=svc(ms.serviceId);
   return modalWrap('Utiliser une séance',`<div class="totals"><div class="spread"><span class="muted">Client</span><b>${esc(cname(ms.clientId))}</b></div><div class="spread"><span class="muted">Formule</span><span>${esc(f.name)}</span></div><div class="spread"><span class="muted">Séances</span><span class="num">${ms.used} utilisée${ms.used>1?'s':''} sur ${ms.included} · valable jusqu'au ${fmtD(ms.end)}</span></div></div><div class="note">Après validation : ${memberLeft(ms)-1} séance${memberLeft(ms)-1>1?'s':''} restante${memberLeft(ms)-1>1?'s':''}. Aucun paiement n'est demandé, la séance est déjà payée par le forfait.</div><div id="us-err"></div>`,
@@ -2255,8 +2299,31 @@ const A={
  crper:d=>{ui.cr.p=d.p;if(d.p==='periode'&&!ui.cr.from){ui.cr.from=addDays(TODAY,-6);ui.cr.to=TODAY}render()},
  crshift:d=>{ui.cr.ref=shiftRef(ui.cr.p,ui.cr.ref,+d.n);if(ui.cr.ref>TODAY)ui.cr.ref=TODAY;render()},
  printCashRecap:()=>{printHTML(cashRecapPrint(),'a4')},
+ possel:(d,el,e)=>{if(e&&e.target.closest('.qty'))return;ui.pos.sel=+d.i;render()},
+ posclearq:()=>{ui.pos.q='';render();const el=document.getElementById('pos-q');if(el)el.focus()},
+ posPay:()=>{const P=ui.pos;if(!P.cart.length)return;P.payOpen=true;P.cashMode=false;render()},
+ posPayClose:()=>{Object.assign(ui.pos,{payOpen:false,cashMode:false,tendered:''});render()},
+ posPayBg:(d,el,e)=>{if(e.target===el)A.posPayClose()},
+ posQtyM:()=>{ui.modal={type:'posQty'};render()},posPriceM:()=>{if(!isAdmin())return;ui.modal={type:'posPrice'};render()},posDiscM:()=>{ui.modal={type:'posDisc'};render()},posClientM:()=>{ui.modal={type:'posClient'};render()},posNoteM:()=>{ui.modal={type:'posNote'};render()},
+ posDel:()=>{const P=ui.pos;if(P.sel>=0&&P.cart[P.sel]){P.cart.splice(P.sel,1);P.pays=[];P.sel=P.cart.length-1}render()},
+ posCancel:()=>{if(!confirm2('poscancel','Cliquez de nouveau sur « Annuler » pour vider le ticket.'))return;Object.assign(ui.pos,{cart:[],pays:[],amount:'',key:null,mode:'complet',due:'',note:'',clientId:'',payOpen:false,cashMode:false,detail:false});render()},
+ posSetQty:()=>{const P=ui.pos;const l=P.cart[P.sel];const n=parseInt(val('pq-v'));if(!(n>=1)){toast('Quantité invalide.',true);return}if(l.kind==='P'&&n>prd(l.refId).stock){toast('Stock insuffisant.',true);return}l.qty=n;P.pays=[];ui.modal=null;render()},
+ posSetPrice:()=>{if(!isAdmin())return;const P=ui.pos;const l=P.cart[P.sel];const v=parseM(val('pp-v'));if(isNaN(v)||v<0){toast('Prix invalide.',true);return}if(!l.listUnit)l.listUnit=l.unit;l.unit=v;l.priceEdited=v!==l.listUnit;P.pays=[];ui.modal=null;render()},
+ posSetDisc:d=>{const P=ui.pos;const v=parseFloat(String(val('pd-v')||'0').replace(',','.'));if(isNaN(v)||v<0||v>100){toast('Saisissez un pourcentage entre 0 et 100.',true);return}if(!isAdmin()&&v>S.perms.discountMax){toast(`Remise maximale autorisée : ${S.perms.discountMax} %.`,true);return}
+  if(d.all)P.cart.forEach(l=>l.disc=v);else if(P.cart[P.sel])P.cart[P.sel].disc=v;P.pays=[];ui.modal=null;render()},
+ posSetClient:()=>{const P=ui.pos;P.clientId=val('pc-client');P.pays=P.pays.filter(p=>p.method!==ADV);if(P.method===ADV)P.method='Espèces';ui.modal=null;render()},
+ posSetNote:()=>{ui.pos.note=val('pn-note');ui.modal=null;render()},
+ posdatetoday:()=>{ui.pos.date='';render()},
+ saleBackdate:()=>{if(!isAdmin())return;ui.pos.date=addDays(TODAY,-1);ui.pos.time='12:00';ui.view='pos';ui.modal=null;render();toast('Vente antérieure : choisissez la date dans le ticket, puis ajoutez les articles.')},
+ xlsxSales:()=>{const V=ui.sales;const rows=S.sales.filter(s=>V.month==='tous'||s.date.startsWith(V.month)).sort((a,b)=>(a.date+(a.time||'')).localeCompare(b.date+(b.time||'')));
+  download(xlsxBlob([{name:'Ventes',rows:[['Date','Heure','Ticket','Cliente','Articles','Total TTC','HT','Payé','Reste','Moyens','Vendu par','État','Régularisée le'],...rows.map(s=>[fmtD(s.date),s.time||'',s.no,cname(s.clientId),s.lines.map(l=>(l.qty>1?l.qty+' × ':'')+l.name).join(', '),{m:s.total},{m:docHT(s.lines)},{m:paidFor(s.id)},{m:s.status==='annulée'?0:s.total-paidFor(s.id)},[...new Set(S.payments.filter(p=>p.saleId===s.id).map(p=>p.method))].join(', '),s.seller||userName(s.user),s.status,s.backdated?fmtD(s.entered.slice(0,10)):''])]}]),`KAYANI-ventes-${V.month}.xlsx`)},
+ posEnter:()=>{const P=ui.pos;const raw=P.q.trim();if(!raw)return;const m=/^(\d+)\s*\*\s*(.+)$/.exec(raw);const n=m?Math.max(1,parseInt(m[1])):1;const r=posFind(m?m[2]:raw);
+  const one=r.exact&&r.hits.length===1?r.hits[0]:r.hits.length===1?r.hits[0]:null;if(!one){toast(r.hits.length?'Plusieurs articles correspondent : touchez celui à ajouter.':'Aucun article ne correspond.',true);return}
+  if(one.k==='P'&&(!one.price||one.stock<=0)){toast('Produit non vendable (prix ou stock manquant).',true);return}
+  const ex=P.cart.find(l=>l.kind===one.k&&l.refId===one.id);const cur=ex?ex.qty:0;if(one.k==='P'&&cur+n>prd(one.id).stock){toast('Stock insuffisant.',true);return}
+  if(ex)ex.qty+=n;else{const l=mkLine(one.k,one.id);l.qty=n;P.cart.push(l)}if(!P.key)P.key=uid('cart');P.sel=P.cart.findIndex(l=>l.kind===one.k&&l.refId===one.id);P.q='';P.pays=[];render();const el=document.getElementById('pos-q');if(el)el.focus()},
  quickpay:d=>{const P=ui.pos;if(!P.cart.length||P.busy)return;const T=posTotals();
-  if(d.m==='Espèces'){if(!S.cash){toast('Ouvrez la caisse avant d\'encaisser des espèces.',true);return}P.cashMode=true;P.tendered='';render();setTimeout(()=>{const el=document.getElementById('pos-tender');if(el)el.focus()},30);return}
+  if(d.m==='Espèces'){if(!S.cash&&!posBack()){toast('Ouvrez la caisse avant d\'encaisser des espèces.',true);return}P.cashMode=true;P.payOpen=true;P.detail=false;P.tendered='';render();setTimeout(()=>{const el=document.getElementById('pos-tender');if(el)el.focus()},30);return}
   if(T.rest<=0){A.validate();return}
   let amt=T.rest;
   if(d.m===ADV){const avail=clientAdvBal(P.clientId)-P.pays.filter(p=>p.method===ADV).reduce((a,p)=>a+p.amount,0);amt=Math.min(amt,avail);if(amt<=0)return;
@@ -2348,22 +2415,23 @@ const A={
  validate:()=>{
   const P=ui.pos;if(P.busy)return;if(!P.key)P.key=uid('cart');if(S.processed.has(P.key)){toast('Cette vente a déjà été enregistrée.',true);return}
   const T=posTotals();const cashPay=P.pays.filter(p=>p.method==='Espèces').reduce((a,p)=>a+p.amount,0);
-  if(cashPay>0&&!S.cash){toast('Ouvrez la caisse avant d\'encaisser des espèces.',true);return}
+  const SD=posDate(),back=SD!==TODAY;
+  if(cashPay>0&&!S.cash&&!back){toast('Ouvrez la caisse avant d\'encaisser des espèces.',true);return}
   for(const l of P.cart){if(l.kind==='P'&&prd(l.refId).stock<l.qty){toast(`Stock insuffisant pour ${l.name}.`,true);return}}
   P.busy=true;render();
   setTimeout(()=>{ // simule l'aller-retour serveur ; la clé empêche un second enregistrement
    S.processed.add(P.key);
    const change=Math.max(0,-T.rest);
-   const isAdv=T.rest>0&&P.pays.length>0;const sale={id:uid('V'),no:nextNo('REC'),date:TODAY,time:hm(nowMin()),clientId:P.clientId||null,lines:P.cart.map(l=>({...l})),total:T.total,user:ui.user.id,status:'validée',key:P.key,advance:isAdv,dueDate:isAdv?(P.due||addDays(TODAY,7)):''};
+   const isAdv=T.rest>0&&P.pays.length>0;const sale={id:uid('V'),no:nextNo('REC'),date:SD,time:back?(P.time||'12:00'):hm(nowMin()),...(back?{backdated:true,entered:TODAY+' '+hm(nowMin())}:{}),...(P.note?{note:P.note}:{}),clientId:P.clientId||null,lines:P.cart.map(l=>({...l})),total:T.total,user:ui.user.id,status:'validée',key:P.key,advance:isAdv,dueDate:isAdv?(P.due||addDays(TODAY,7)):''};
    S.sales.push(sale);
-   sale.lines.filter(l=>l.kind==='P').forEach(l=>{prd(l.refId).stock-=l.qty;S.stockMoves.push({id:uid('SM'),date:TODAY,pid:l.refId,type:'Vente',qty:-l.qty,reason:'Vente '+sale.no,user:ui.user.id,saleLine:sale.id+':'+l.refId})});
+   sale.lines.filter(l=>l.kind==='P').forEach(l=>{prd(l.refId).stock-=l.qty;S.stockMoves.push({id:uid('SM'),date:SD,pid:l.refId,type:'Vente',qty:-l.qty,reason:'Vente '+sale.no,user:ui.user.id,saleLine:sale.id+':'+l.refId})});
    // abonnement / forfait vendu → création de la formule
-   sale.lines.filter(l=>l.kind==='S'&&svc(l.refId).sessions&&sale.clientId).forEach(l=>{const s=svc(l.refId);for(let k=0;k<l.qty;k++)S.memberships.push({id:uid('AB'),clientId:sale.clientId,serviceId:s.id,start:TODAY,end:addDays(TODAY,s.days),included:s.sessions,used:0,saleId:sale.id})});
-   let chg=change;P.pays.forEach(p=>{let amount=p.amount;if(p.method==='Espèces'&&chg>0){const t=Math.min(chg,amount);amount-=t;chg-=t}if(amount<=0)return;const pay={id:uid('P'),date:TODAY,time:sale.time,saleId:sale.id,method:p.method,amount,user:ui.user.id,key:P.key,kind:p.method===ADV?'Déduit de l\'avance':isAdv?'Avance':'Paiement'};S.payments.push(pay);
+   sale.lines.filter(l=>l.kind==='S'&&svc(l.refId).sessions&&sale.clientId).forEach(l=>{const s=svc(l.refId);for(let k=0;k<l.qty;k++)S.memberships.push({id:uid('AB'),clientId:sale.clientId,serviceId:s.id,start:SD,end:addDays(SD,s.days),included:s.sessions,used:0,saleId:sale.id})});
+   let chg=change;P.pays.forEach(p=>{let amount=p.amount;if(p.method==='Espèces'&&chg>0){const t=Math.min(chg,amount);amount-=t;chg-=t}if(amount<=0)return;const pay={id:uid('P'),date:SD,time:sale.time,saleId:sale.id,method:p.method,amount,user:ui.user.id,key:P.key,kind:p.method===ADV?'Déduit de l\'avance':isAdv?'Avance':'Paiement'};S.payments.push(pay);
     if(p.method===ADV){const ids=consumeAdvance(sale.clientId,amount,sale);pay.kind='Déduit de l\'avance '+ids.join(', ');log('Avance utilisée',`${ids.join(', ')} · ${fmtM(amount)} sur ${sale.no}`)}
-    if(p.method==='Espèces')S.cash.moves.push({id:uid('M'),time:sale.time,type:'Encaissement',amount,reason:(isAdv?'Avance vente ':'Vente ')+sale.no,ref:pay.id,user:ui.user.id})});
-   log(isAdv?'Vente avec avance':'Vente',`${sale.no} · ${fmtM(sale.total)}${T.rest>0?' · avance '+fmtM(T.paid)+' · reste dû '+fmtM(T.rest)+(isAdv?' au '+fmtD(sale.dueDate):''):''}`);
-   Object.assign(ui.pos,{cart:[],pays:[],amount:'',key:null,busy:false,clientId:'',mode:'complet',due:'',cashMode:false,tendered:'',detail:false});
+    if(p.method==='Espèces'&&!back&&S.cash)S.cash.moves.push({id:uid('M'),time:sale.time,type:'Encaissement',amount,reason:(isAdv?'Avance vente ':'Vente ')+sale.no,ref:pay.id,user:ui.user.id})});
+   log(back?'Vente antérieure (régularisation)':isAdv?'Vente avec avance':'Vente',`${sale.no}${back?' · datée du '+fmtD(SD)+' '+sale.time:''} · ${fmtM(sale.total)}${T.rest>0?' · avance '+fmtM(T.paid)+' · reste dû '+fmtM(T.rest)+(isAdv?' au '+fmtD(sale.dueDate):''):''}`);
+   Object.assign(ui.pos,{cart:[],pays:[],amount:'',key:null,busy:false,clientId:'',mode:'complet',due:'',cashMode:false,tendered:'',detail:false,payOpen:false,note:'',sel:-1});
    ui.modal={type:'receipt',id:sale.id,change};render();
   },450);
  },
@@ -2481,9 +2549,10 @@ const FILE_HANDLERS={};
 const INPUT={
  posq:v=>{ui.pos.q=v},posdue:v=>{ui.pos.due=v;return false},posclient:v=>{ui.pos.clientId=v;ui.pos.pays=ui.pos.pays.filter(p=>p.method!==ADV);if(ui.pos.method===ADV)ui.pos.method='Espèces'},posamount:v=>{ui.pos.amount=v;return false},
  disc:(v,el)=>{const n=Math.max(0,Math.min(100,parseFloat(v.replace(',','.'))||0));ui.pos.cart[+el.dataset.i].disc=n},
- catq:v=>{ui.cat.q=v},salesq:v=>{ui.sales.q=v;ui.sales.page=1},salesmonth:v=>{ui.sales.month=v;ui.sales.page=1},advq:v=>{ui.adv.q=v},expmonth:v=>{ui.exp.month=v},nasvc:(v)=>{const el=document.getElementById('na-purpose');const am=document.getElementById('na-amount');if(v&&el&&!el.value)el.value=svc(v).name;if(v&&am&&!am.value)am.value=toInput(svc(v).price);return false},cliq:v=>{ui.cli.q=v;ui.cli.page=1},docsq:v=>{ui.docs.q=v},expq:v=>{ui.exp.q=v},
+ catq:v=>{ui.cat.q=v},salesq:v=>{ui.sales.q=v;ui.sales.page=1},salesmeth:v=>{ui.sales.method=v;ui.sales.page=1},salesmonth:v=>{ui.sales.month=v;ui.sales.page=1},advq:v=>{ui.adv.q=v},expmonth:v=>{ui.exp.month=v},nasvc:(v)=>{const el=document.getElementById('na-purpose');const am=document.getElementById('na-amount');if(v&&el&&!el.value)el.value=svc(v).name;if(v&&am&&!am.value)am.value=toInput(svc(v).price);return false},cliq:v=>{ui.cli.q=v;ui.cli.page=1},docsq:v=>{ui.docs.q=v},expq:v=>{ui.exp.q=v},
  fcat:v=>{ui.fcat=v},fuser:v=>{ui.fuser=v},
  postender:v=>{ui.pos.tendered=v},
+ posdate:v=>{if(/^(19|20)\d\d-\d\d-\d\d$/.test(v)&&v<=TODAY){ui.pos.date=v===TODAY?'':v;const el=document.activeElement;if(el&&el.id==='pos-date')return false}return false},postime:v=>{ui.pos.time=v;return false},
  teamdate:v=>{if(/^\d{4}-\d{2}-\d{2}$/.test(v)){ui.team.date=v;return}return false},teamm:v=>{ui.team.m=v},teampm:v=>{ui.team.pm=v},
  tmkind:v=>{const a=document.getElementById('tm-sal'),b=document.getElementById('tm-pre');if(a)a.style.display=v==='salarié'?'grid':'none';if(b)b.style.display=v==='prestataire'?'grid':'none';return false},
  agtyp:v=>{ui.agenda.typ=v},repfrom:v=>{ui.rep.from=v},repto:v=>{ui.rep.to=v},jrq:v=>{ui.jr.q=v},jruser:v=>{ui.jr.user=v},
@@ -2506,19 +2575,22 @@ document.addEventListener('click',e=>{const a=e.target.closest('[data-a]');if(!a
 document.addEventListener('keydown',e=>{
  if(!ui.user||ui.view!=='pos')return;
  if(e.key==='Enter'&&e.target.id==='pos-tender'){e.preventDefault();A.cashpay();return}
+ if(e.key==='Enter'&&e.target.id==='pos-q'){e.preventDefault();A.posEnter();return}
  if(ui.modal)return;
- const k=e.key;if(!['F2','F4','F9','F10','F12','Escape'].includes(k))return;
- if(k==='Escape'){if(ui.pos.cashMode){e.preventDefault();A.cashcancel()}return}
+ const k=e.key;if(!['F2','F4','F7','F8','F9','F10','F12','Escape'].includes(k))return;
+ if(k==='Escape'){if(ui.pos.cashMode){e.preventDefault();A.cashcancel()}else if(ui.pos.payOpen){e.preventDefault();A.posPayClose()}return}
  e.preventDefault();
  if(k==='F2'){const el=document.getElementById('pos-q');if(el){el.focus();el.select()}}
- else if(k==='F4')A.park();
+ else if(k==='F4'){if(ui.pos.cart[ui.pos.sel])A.posQtyM()}
+ else if(k==='F7')A.posClientM();
+ else if(k==='F8')A.park();
  else if(k==='F9')A.quickpay({m:'Espèces'});
  else if(k==='F10')A.quickpay({m:'Carte'});
- else if(k==='F12'){if(!ui.pos.cart.length)return;if(!S.cash){toast('Ouvrez la caisse avant d\'encaisser des espèces.',true);return}ui.pos.tendered='';A.cashpay()}
+ else if(k==='F12'){if(!ui.pos.cart.length)return;if(!ui.pos.payOpen){A.posPay();return}if(!S.cash&&!posBack()){toast('Ouvrez la caisse avant d\'encaisser des espèces.',true);return}ui.pos.tendered='';A.cashpay()}
 });
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&ui.modal){ui.modal=null;render()}if((e.key==='Enter'||e.key===' ')&&e.target.matches('.ag-ev')){e.preventDefault();e.target.click()}});
 document.addEventListener('input',e=>{const k=e.target.dataset&&e.target.dataset.in;if(!k||!INPUT[k])return;const r=INPUT[k](e.target.value,e.target);if(r!==false)render()});
-document.addEventListener('change',e=>{const fe=e.target.dataset&&e.target.dataset.file;if(fe==='exp'&&e.target.files[0]){const x=S.expenses.find(y=>y.id===e.target.dataset.id);if(x)attachFile(x,e.target.files[0]);return}if(fe&&FILE_HANDLERS[fe]&&e.target.files[0]){FILE_HANDLERS[fe](e.target.files[0],e.target);return}const k=e.target.dataset&&e.target.dataset.in;if(k==='crf'||k==='crrow')return;if(k==='instdue'||k==='instamt'){const c=S.credits.find(x=>x.id===e.target.dataset.c);log('Échéance modifiée',(c?c.no:'')+' · '+(k==='instdue'?'date '+fmtD(e.target.value):'montant '+e.target.value+' DT'));render();return}if(k&&['set','tva','disc-max'].includes(k))log('Paramètre modifié',k+(e.target.dataset.k?' · '+e.target.dataset.k:''))});
+document.addEventListener('change',e=>{const fe=e.target.dataset&&e.target.dataset.file;if(fe==='exp'&&e.target.files[0]){const x=S.expenses.find(y=>y.id===e.target.dataset.id);if(x)attachFile(x,e.target.files[0]);return}if(fe&&FILE_HANDLERS[fe]&&e.target.files[0]){FILE_HANDLERS[fe](e.target.files[0],e.target);return}const k=e.target.dataset&&e.target.dataset.in;if(k==='crf'||k==='crrow')return;if(k==='posdate'){render();return}if(k==='instdue'||k==='instamt'){const c=S.credits.find(x=>x.id===e.target.dataset.c);log('Échéance modifiée',(c?c.no:'')+' · '+(k==='instdue'?'date '+fmtD(e.target.value):'montant '+e.target.value+' DT'));render();return}if(k&&['set','tva','disc-max'].includes(k))log('Paramètre modifié',k+(e.target.dataset.k?' · '+e.target.dataset.k:''))});
 document.addEventListener('submit',e=>{if(e.target.id==='login-form'&&Store.PROD){e.preventDefault();doLogin();return}if(e.target.id==='login-form'){e.preventDefault();ui.user=USERS[ui.login.role];ui.view='pos';ui.pos.method='Espèces';log('Connexion','Session ouverte (simulée)');render()}});
 function renderStatus(){const el=document.getElementById('sync-pill');if(!el)return;const st=Store.state;
  const cls=st.syncing?'busy':!navigator.onLine?'off':st.error?'err':'';
